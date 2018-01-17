@@ -149,7 +149,7 @@
     btcAddress.font=[UIFont fontWithName:@"Courier New" size:15];
     btcAddress.numberOfLines=3;
     btcAddress.userInteractionEnabled=YES;
-    btcAddress.text=@"149cLxMfN7xzH6HAbF9C7mDG2RwnfKJLzR";
+    btcAddress.text=@"1QDJkWk7yKeX2wSgDEKNNgSu8kwChTsHuY";
     [self.view addSubview:btcAddress];
     
     UITapGestureRecognizer *longer=[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(copyLabelText:)];
