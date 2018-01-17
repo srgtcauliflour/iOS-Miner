@@ -2,6 +2,19 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/ethandye/Documents/Coding/Codecademy/iOS Miner/iOS Miner/libcrypto.a">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/ethandye/Documents/Coding/Codecademy/iOS Miner/iOS Miner/libcurl.a">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/ethandye/Documents/Coding/Codecademy/iOS Miner/iOS Miner/libjansson.a">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/ethandye/Documents/Coding/Codecademy/iOS Miner/iOS Miner/minerd.a"
+      assignedFileDataType = "public.data">
+   </FileRef>
+   <FileRef
       location = "self:iOS Miner.xcodeproj">
    </FileRef>
 </Workspace>

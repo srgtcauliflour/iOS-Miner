@@ -8,15 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		8A4F1C8F200E9FD500BD0360 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4F1C8E200E9FD500BD0360 /* AppDelegate.m */; };
-		8A4F1C92200E9FD500BD0360 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4F1C91200E9FD500BD0360 /* RootViewController.m */; };
-		8A4F1C95200E9FD500BD0360 /* DataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4F1C94200E9FD500BD0360 /* DataViewController.m */; };
-		8A4F1C98200E9FD500BD0360 /* ModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4F1C97200E9FD500BD0360 /* ModelController.m */; };
 		8A4F1C9B200E9FD500BD0360 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A4F1C99200E9FD500BD0360 /* Main.storyboard */; };
 		8A4F1C9D200E9FD500BD0360 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A4F1C9C200E9FD500BD0360 /* Assets.xcassets */; };
 		8A4F1CA0200E9FD500BD0360 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A4F1C9E200E9FD500BD0360 /* LaunchScreen.storyboard */; };
 		8A4F1CA3200E9FD500BD0360 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4F1CA2200E9FD500BD0360 /* main.m */; };
 		8A4F1CAD200E9FD600BD0360 /* iOS_MinerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4F1CAC200E9FD600BD0360 /* iOS_MinerTests.m */; };
 		8A4F1CB8200E9FD600BD0360 /* iOS_MinerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4F1CB7200E9FD600BD0360 /* iOS_MinerUITests.m */; };
+		8A4F1CCA200EA69500BD0360 /* BackgroundTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4F1CC9200EA69500BD0360 /* BackgroundTask.m */; };
+		8A4F1CCD200EA75500BD0360 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4F1CCC200EA75500BD0360 /* CustomCell.m */; };
+		8A4F1CD0200EA7DB00BD0360 /* GrayTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4F1CCF200EA7DB00BD0360 /* GrayTableController.m */; };
+		8A4F1CD3200EA94A00BD0360 /* LicenseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4F1CD2200EA94A00BD0360 /* LicenseViewController.m */; };
+		8A4F1CD6200EAA6400BD0360 /* LogViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4F1CD5200EAA6400BD0360 /* LogViewController.m */; };
+		8A4F1CD9200EAB3500BD0360 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4F1CD8200EAB3500BD0360 /* MainViewController.m */; };
+		8A4F1CDC200EAB8300BD0360 /* ManageConfigurationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4F1CDB200EAB8300BD0360 /* ManageConfigurationController.m */; };
+		8A4F1CDF200EABF400BD0360 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4F1CDE200EABF400BD0360 /* Reachability.m */; };
+		8A4F1CE1200EAC2D00BD0360 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4F1CE0200EAC2D00BD0360 /* ViewController.m */; };
+		8A4F1CE5200EACBA00BD0360 /* AddConfigurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4F1CE4200EACBA00BD0360 /* AddConfigurationViewController.m */; };
+		8A4F1CEA200EAD0400BD0360 /* Disclaimer.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8A4F1CE7200EAD0300BD0360 /* Disclaimer.txt */; };
+		8A4F1CEB200EAD0400BD0360 /* empty.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8A4F1CE8200EAD0300BD0360 /* empty.wav */; };
+		8A4F1CEC200EAD0400BD0360 /* License.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8A4F1CE9200EAD0300BD0360 /* License.txt */; };
+		8A4F1CFA200EB16000BD0360 /* love@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8A4F1CF9200EB16000BD0360 /* love@2x.png */; };
+		8A4F1D48200EC52800BD0360 /* minerd.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A4F1D47200EC52800BD0360 /* minerd.a */; };
+		8A4F1D4A200EC54A00BD0360 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A4F1D49200EC54A00BD0360 /* libcrypto.a */; };
+		8A4F1D4C200EC55300BD0360 /* libjansson.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A4F1D4B200EC55300BD0360 /* libjansson.a */; };
+		8A4F1D4E200EC55C00BD0360 /* libcurl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A4F1D4D200EC55C00BD0360 /* libcurl.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,12 +55,6 @@
 		8A4F1C8A200E9FD500BD0360 /* iOS Miner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Miner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A4F1C8D200E9FD500BD0360 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8A4F1C8E200E9FD500BD0360 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		8A4F1C90200E9FD500BD0360 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
-		8A4F1C91200E9FD500BD0360 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		8A4F1C93200E9FD500BD0360 /* DataViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataViewController.h; sourceTree = "<group>"; };
-		8A4F1C94200E9FD500BD0360 /* DataViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataViewController.m; sourceTree = "<group>"; };
-		8A4F1C96200E9FD500BD0360 /* ModelController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelController.h; sourceTree = "<group>"; };
-		8A4F1C97200E9FD500BD0360 /* ModelController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModelController.m; sourceTree = "<group>"; };
 		8A4F1C9A200E9FD500BD0360 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8A4F1C9C200E9FD500BD0360 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A4F1C9F200E9FD500BD0360 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -57,6 +66,34 @@
 		8A4F1CB3200E9FD600BD0360 /* iOS MinerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iOS MinerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A4F1CB7200E9FD600BD0360 /* iOS_MinerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iOS_MinerUITests.m; sourceTree = "<group>"; };
 		8A4F1CB9200E9FD600BD0360 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A4F1CC8200EA62900BD0360 /* BackgroundTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BackgroundTask.h; sourceTree = "<group>"; };
+		8A4F1CC9200EA69500BD0360 /* BackgroundTask.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BackgroundTask.m; sourceTree = "<group>"; };
+		8A4F1CCB200EA6EE00BD0360 /* CustomCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
+		8A4F1CCC200EA75500BD0360 /* CustomCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
+		8A4F1CCE200EA7C800BD0360 /* GrayTableController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GrayTableController.h; sourceTree = "<group>"; };
+		8A4F1CCF200EA7DB00BD0360 /* GrayTableController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GrayTableController.m; sourceTree = "<group>"; };
+		8A4F1CD1200EA93500BD0360 /* LicenseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LicenseViewController.h; sourceTree = "<group>"; };
+		8A4F1CD2200EA94A00BD0360 /* LicenseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LicenseViewController.m; sourceTree = "<group>"; };
+		8A4F1CD4200EAA3400BD0360 /* LogViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogViewController.h; sourceTree = "<group>"; };
+		8A4F1CD5200EAA6400BD0360 /* LogViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogViewController.m; sourceTree = "<group>"; };
+		8A4F1CD7200EAAE000BD0360 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		8A4F1CD8200EAB3500BD0360 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		8A4F1CDA200EAB5E00BD0360 /* ManageConfigurationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ManageConfigurationController.h; sourceTree = "<group>"; };
+		8A4F1CDB200EAB8300BD0360 /* ManageConfigurationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ManageConfigurationController.m; sourceTree = "<group>"; };
+		8A4F1CDD200EABC000BD0360 /* Reachability.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		8A4F1CDE200EABF400BD0360 /* Reachability.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		8A4F1CE0200EAC2D00BD0360 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		8A4F1CE2200EAC3D00BD0360 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		8A4F1CE3200EAC9000BD0360 /* AddConfigurationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddConfigurationViewController.h; sourceTree = "<group>"; };
+		8A4F1CE4200EACBA00BD0360 /* AddConfigurationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddConfigurationViewController.m; sourceTree = "<group>"; };
+		8A4F1CE7200EAD0300BD0360 /* Disclaimer.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Disclaimer.txt; sourceTree = "<group>"; };
+		8A4F1CE8200EAD0300BD0360 /* empty.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = empty.wav; sourceTree = "<group>"; };
+		8A4F1CE9200EAD0300BD0360 /* License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = License.txt; sourceTree = "<group>"; };
+		8A4F1CF9200EB16000BD0360 /* love@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "love@2x.png"; sourceTree = "<group>"; };
+		8A4F1D47200EC52800BD0360 /* minerd.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = minerd.a; sourceTree = "<group>"; };
+		8A4F1D49200EC54A00BD0360 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
+		8A4F1D4B200EC55300BD0360 /* libjansson.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libjansson.a; sourceTree = "<group>"; };
+		8A4F1D4D200EC55C00BD0360 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcurl.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +101,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A4F1D4C200EC55300BD0360 /* libjansson.a in Frameworks */,
+				8A4F1D4E200EC55C00BD0360 /* libcurl.a in Frameworks */,
+				8A4F1D4A200EC54A00BD0360 /* libcrypto.a in Frameworks */,
+				8A4F1D48200EC52800BD0360 /* minerd.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +132,7 @@
 				8A4F1CAB200E9FD600BD0360 /* iOS MinerTests */,
 				8A4F1CB6200E9FD600BD0360 /* iOS MinerUITests */,
 				8A4F1C8B200E9FD500BD0360 /* Products */,
+				8A4F1D29200EC1BA00BD0360 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,19 +149,39 @@
 		8A4F1C8C200E9FD500BD0360 /* iOS Miner */ = {
 			isa = PBXGroup;
 			children = (
+				8A4F1CE3200EAC9000BD0360 /* AddConfigurationViewController.h */,
+				8A4F1CE4200EACBA00BD0360 /* AddConfigurationViewController.m */,
 				8A4F1C8D200E9FD500BD0360 /* AppDelegate.h */,
 				8A4F1C8E200E9FD500BD0360 /* AppDelegate.m */,
-				8A4F1C90200E9FD500BD0360 /* RootViewController.h */,
-				8A4F1C91200E9FD500BD0360 /* RootViewController.m */,
-				8A4F1C93200E9FD500BD0360 /* DataViewController.h */,
-				8A4F1C94200E9FD500BD0360 /* DataViewController.m */,
-				8A4F1C96200E9FD500BD0360 /* ModelController.h */,
-				8A4F1C97200E9FD500BD0360 /* ModelController.m */,
-				8A4F1C99200E9FD500BD0360 /* Main.storyboard */,
 				8A4F1C9C200E9FD500BD0360 /* Assets.xcassets */,
-				8A4F1C9E200E9FD500BD0360 /* LaunchScreen.storyboard */,
+				8A4F1CC8200EA62900BD0360 /* BackgroundTask.h */,
+				8A4F1CC9200EA69500BD0360 /* BackgroundTask.m */,
+				8A4F1CCB200EA6EE00BD0360 /* CustomCell.h */,
+				8A4F1CCC200EA75500BD0360 /* CustomCell.m */,
+				8A4F1CCE200EA7C800BD0360 /* GrayTableController.h */,
+				8A4F1CCF200EA7DB00BD0360 /* GrayTableController.m */,
 				8A4F1CA1200E9FD500BD0360 /* Info.plist */,
+				8A4F1C9E200E9FD500BD0360 /* LaunchScreen.storyboard */,
+				8A4F1D49200EC54A00BD0360 /* libcrypto.a */,
+				8A4F1D4D200EC55C00BD0360 /* libcurl.a */,
+				8A4F1D4B200EC55300BD0360 /* libjansson.a */,
+				8A4F1CD1200EA93500BD0360 /* LicenseViewController.h */,
+				8A4F1CD2200EA94A00BD0360 /* LicenseViewController.m */,
+				8A4F1CD4200EAA3400BD0360 /* LogViewController.h */,
+				8A4F1CD5200EAA6400BD0360 /* LogViewController.m */,
+				8A4F1CF9200EB16000BD0360 /* love@2x.png */,
 				8A4F1CA2200E9FD500BD0360 /* main.m */,
+				8A4F1C99200E9FD500BD0360 /* Main.storyboard */,
+				8A4F1CD7200EAAE000BD0360 /* MainViewController.h */,
+				8A4F1CD8200EAB3500BD0360 /* MainViewController.m */,
+				8A4F1CDA200EAB5E00BD0360 /* ManageConfigurationController.h */,
+				8A4F1CDB200EAB8300BD0360 /* ManageConfigurationController.m */,
+				8A4F1D47200EC52800BD0360 /* minerd.a */,
+				8A4F1CDD200EABC000BD0360 /* Reachability.h */,
+				8A4F1CDE200EABF400BD0360 /* Reachability.m */,
+				8A4F1CE6200EAD0300BD0360 /* Supporting Files */,
+				8A4F1CE2200EAC3D00BD0360 /* ViewController.h */,
+				8A4F1CE0200EAC2D00BD0360 /* ViewController.m */,
 			);
 			path = "iOS Miner";
 			sourceTree = "<group>";
@@ -140,6 +202,23 @@
 				8A4F1CB9200E9FD600BD0360 /* Info.plist */,
 			);
 			path = "iOS MinerUITests";
+			sourceTree = "<group>";
+		};
+		8A4F1CE6200EAD0300BD0360 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8A4F1CE7200EAD0300BD0360 /* Disclaimer.txt */,
+				8A4F1CE8200EAD0300BD0360 /* empty.wav */,
+				8A4F1CE9200EAD0300BD0360 /* License.txt */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8A4F1D29200EC1BA00BD0360 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +289,11 @@
 					8A4F1C89200E9FD500BD0360 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					8A4F1CA7200E9FD600BD0360 = {
 						CreatedOnToolsVersion = 9.2;
@@ -249,7 +333,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A4F1CA0200E9FD500BD0360 /* LaunchScreen.storyboard in Resources */,
+				8A4F1CEA200EAD0400BD0360 /* Disclaimer.txt in Resources */,
+				8A4F1CEC200EAD0400BD0360 /* License.txt in Resources */,
 				8A4F1C9D200E9FD500BD0360 /* Assets.xcassets in Resources */,
+				8A4F1CEB200EAD0400BD0360 /* empty.wav in Resources */,
+				8A4F1CFA200EB16000BD0360 /* love@2x.png in Resources */,
 				8A4F1C9B200E9FD500BD0360 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,10 +364,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A4F1CA3200E9FD500BD0360 /* main.m in Sources */,
-				8A4F1C92200E9FD500BD0360 /* RootViewController.m in Sources */,
-				8A4F1C98200E9FD500BD0360 /* ModelController.m in Sources */,
-				8A4F1C95200E9FD500BD0360 /* DataViewController.m in Sources */,
+				8A4F1CD6200EAA6400BD0360 /* LogViewController.m in Sources */,
+				8A4F1CD3200EA94A00BD0360 /* LicenseViewController.m in Sources */,
+				8A4F1CD9200EAB3500BD0360 /* MainViewController.m in Sources */,
+				8A4F1CDF200EABF400BD0360 /* Reachability.m in Sources */,
+				8A4F1CE1200EAC2D00BD0360 /* ViewController.m in Sources */,
+				8A4F1CCD200EA75500BD0360 /* CustomCell.m in Sources */,
+				8A4F1CCA200EA69500BD0360 /* BackgroundTask.m in Sources */,
 				8A4F1C8F200E9FD500BD0360 /* AppDelegate.m in Sources */,
+				8A4F1CDC200EAB8300BD0360 /* ManageConfigurationController.m in Sources */,
+				8A4F1CE5200EACBA00BD0360 /* AddConfigurationViewController.m in Sources */,
+				8A4F1CD0200EA7DB00BD0360 /* GrayTableController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,10 +537,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 76LDH4RN9K;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "iOS Miner/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/iOS\\ Miner/**",
+					"$(PROJECT_DIR)/iOS\\ Miner/**",
+					"$(PROJECT_DIR)/iOS\\ Miner/**",
+					"$(PROJECT_DIR)/iOS\\ Miner/**",
+				);
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = "Dye-Enterprises.iOS-Miner";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -456,10 +561,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 76LDH4RN9K;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "iOS Miner/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/iOS\\ Miner/**",
+					"$(PROJECT_DIR)/iOS\\ Miner/**",
+					"$(PROJECT_DIR)/iOS\\ Miner/**",
+					"$(PROJECT_DIR)/iOS\\ Miner/**",
+				);
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = "Dye-Enterprises.iOS-Miner";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
