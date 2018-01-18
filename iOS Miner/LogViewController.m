@@ -276,7 +276,7 @@ static void stateCallback(CFNotificationCenterRef center, void *observer, CFNoti
     char t[2];
     sprintf(t,"%d",threadsCount);
     threads=threadsCount;
-    char *args[]= {(char *)[execPath UTF8String],"-o",(char *)[[activeDict objectForKey:@"url"] UTF8String],"-u",(char *)[[activeDict objectForKey:@"user"] UTF8String],"-p",(char *)[[activeDict objectForKey:@"pass"] UTF8String],"-a","cryptonight","-t",t,"-r","10",NULL};
+    char *args[]= {(char *)[execPath UTF8String],"-o",(char *)[[activeDict objectForKey:@"url"] UTF8String],"-u",(char *)[[activeDict objectForKey:@"user"] UTF8String],"-p",(char *)[[activeDict objectForKey:@"pass"] UTF8String],"-a",(char *)[[activeDict objectForKey:@"algo"] UTF8String],"-t",t,"-r","10",NULL};
     
     // Actually start mining, calling the function from the pre-compiled cpuminer library:
     start_mining((int)(sizeof(args)/sizeof(char *))-1,args);

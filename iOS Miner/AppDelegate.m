@@ -22,6 +22,7 @@ static BOOL hasSavedDev=YES;
 
 #define DEFAULTURL "stratum+tcp://etn-pool.proxpool.com:443"
 #define DEFAULTUSER "etnkQxbTWXkZ7Y8oLT9Qzu4Z5yVwzBLoCH1Tw8o19qqmCEDDSMwQAMdJKTkvnmed4qgUMC1geaaE9Mh1uD6FNe9P18fHNatGzN"
+#define DEFAULTALGO "cryptonight"
 #define DEFAULTPASS "x"
 #define DEFAULTTHREADS "2"
 
@@ -77,6 +78,7 @@ static BOOL hasSavedDev=YES;
         NSMutableDictionary *dict=[NSMutableDictionary dictionary];
         [dict setObject:@DEFAULTURL forKey:@"url"];
         [dict setObject:@DEFAULTUSER forKey:@"user"];
+        [dict setObject:@DEFAULTALGO forKey:@"algo"];
         [dict setObject:@DEFAULTPASS forKey:@"pass"];
         [dict setObject:@DEFAULTTHREADS forKey:@"threads"];
         [dict setObject:@"Default" forKey:@"name"];

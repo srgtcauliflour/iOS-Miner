@@ -138,7 +138,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
-    if (indexPath.row==11){
+    if (indexPath.row==12){
         
         NSArray *configs=[defaults objectForKey:CONFIGS_KEY];
         if ([configs count]==1){
@@ -181,9 +181,12 @@
         text=@"Username/Address:";
     }
     if (row==6){
-        text=@"Password:";
+        text=@"Algorithm:";
     }
     if (row==8){
+        text=@"Password:";
+    }
+    if (row==10){
         text=@"Threads:";
     }
     
@@ -202,20 +205,24 @@
     }
     
     if (row==7){
-        placeholder=@"x";
-        textFieldText=[config objectForKey:@"pass"];
+        placeholder=@"cryptonight";
+        textFieldText=[config objectForKey:@"algo"];
     }
     if (row==9){
+        placeholder=@"x";
+        textFieldText=[config objectForKey:@"pass"];
+        
+    }
+    if (row==11){
         placeholder=@"2";
         textFieldText=[config objectForKey:@"threads"];
-        
     }
     
     if (!cell){
         cell=[[EditCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:REUSEID];
     }
     
-    if (row==9){
+    if (row==11){
         UIStepper *stepper=[[UIStepper alloc] initWithFrame:CGRectZero];
         [stepper addTarget:self action:@selector(stepperChanged:) forControlEvents:UIControlEventTouchUpInside];
         stepper.minimumValue=1;
@@ -241,7 +248,7 @@
     if (config){
         cell.textField.text=textFieldText;
     }
-    if (row==11){
+    if (row==12){
         
         cell.textField.placeholder=@"Delete";
         cell.textField.text=@"Delete";
@@ -290,12 +297,14 @@
     EditCell *cell2=(EditCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:5  inSection:0]];
     EditCell *cell3=(EditCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:7  inSection:0]];
     EditCell *cell4=(EditCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:9  inSection:0]];
+    EditCell *cell6=(EditCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:11 inSection:0]];
     
     
     NSString *url= [cell1.textField.text length] ? cell1.textField.text : cell1.textField.placeholder;
     NSString *user= [cell2.textField.text length] ? cell2.textField.text : cell2.textField.placeholder;
-    NSString *pass= [cell3.textField.text length] ? cell3.textField.text : cell3.textField.placeholder;
-    NSString *threads= [cell4.textField.text length] ? cell4.textField.text : cell4.textField.placeholder;
+    NSString *algo= [cell3.textField.text length] ? cell3.textField.text : cell3.textField.placeholder;
+    NSString *pass= [cell4.textField.text length] ? cell4.textField.text : cell4.textField.placeholder;
+    NSString *threads= [cell6.textField.text length] ? cell6.textField.text : cell6.textField.placeholder;
     NSString *name= [cell5.textField.text length] ? cell5.textField.text : cell5.textField.placeholder;
     
     
@@ -304,6 +313,7 @@
     for (NSDictionary *aconfig in configs){
         if ([[aconfig objectForKey:@"url"] isEqual:url]
             && [[aconfig objectForKey:@"user"] isEqual:user]
+            && [[aconfig objectForKey:@"algo"] isEqual:algo]
             && [[aconfig objectForKey:@"pass"] isEqual:pass]
             && [[aconfig objectForKey:@"threads"] isEqual:threads]){
             
@@ -333,6 +343,7 @@
             NSMutableDictionary *dict=[NSMutableDictionary dictionary];
             [dict setObject:url forKey:@"url"];
             [dict setObject:user forKey:@"user"];
+            [dict setObject:algo forKey:@"algo"];
             [dict setObject:pass forKey:@"pass"];
             [dict setObject:threads forKey:@"threads"];
             [dict setObject:name forKey:@"name"];
@@ -363,6 +374,7 @@
         NSMutableDictionary *mutableConfig=[config mutableCopy];
         [mutableConfig setObject:url forKey:@"url"];
         [mutableConfig setObject:user forKey:@"user"];
+        [mutableConfig setObject:algo forKey:@"algo"];
         [mutableConfig setObject:pass forKey:@"pass"];
         [mutableConfig setObject:threads forKey:@"threads"];
         [mutableConfig setObject:name forKey:@"name"];
