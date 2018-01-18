@@ -4,7 +4,7 @@
 //
 //  by Ethan Dye
 //
-//  MobileMiner was forked from LucasJones's cpuminer-multi,
+//  iOS Miner was forked from LucasJones's cpuminer-multi,
 //  and is developed and ported to iOS and arm64 devices
 //  by Elias Limneos. Which was then developed and improved
 //  by Ethan Dye.
@@ -13,7 +13,7 @@
 //
 //  MobileMiner Source: https://github.com/limneos/MobileMiner
 //
-//  MobileMiner is available under the terms of
+//  iOS Miner is available under the terms of
 //  the GNU Public License version 2.
 //
 //  See below for details

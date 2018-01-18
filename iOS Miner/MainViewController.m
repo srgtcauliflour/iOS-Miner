@@ -708,7 +708,7 @@ int getloadavg (double loadavg[], int nelem);
     
 }
 -(id)title{
-    return @"MobileMiner";
+    return @"iOS Miner";
 }
 -(void)viewDidLoad{
     [super viewDidLoad];

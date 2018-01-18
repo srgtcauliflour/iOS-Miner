@@ -20,7 +20,7 @@
     BOOL readOnly;
 }
 -(void)simpleAlert:(NSString *)alertString{
-    UIAlertController *alert=[UIAlertController alertControllerWithTitle:@"MobileMiner" message:alertString preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *alert=[UIAlertController alertControllerWithTitle:@"iOS Miner" message:alertString preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *okAction=[UIAlertAction actionWithTitle:@"Okay" style:UIAlertActionStyleDefault handler:^(UIAlertAction *a){}];
     [alert addAction:okAction];
     [self presentViewController:alert animated:YES completion:nil];
