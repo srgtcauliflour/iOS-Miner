@@ -3,6 +3,9 @@ CPU Miner for ARM64 iOS Devices
 
 This is a fork of Lucas Jones's cpuminer-multi, ( https://github.com/lucasjones/cpuminer-multi ) compiled for arm64 iOS devices. Credits go to the initial developers and contributors. It was then forked from Limneos's MobileMiner ( https://github.com/limneos/MobileMiner ) and further improved upon.
 
+# Releases
+For binaries check under the release tab ( https://github.com/Mrtops/iOS-Miner/releases ) To install on iOS devices please use Saurik's Cydia Impactor ( http://www.cydiaimpactor.com )
+
 # Changes
 
 1) The change needed is in cpu-miner.c, where 
@@ -44,8 +47,6 @@ https://github.com/sinofool/build-libcurl-ios
 
 openssl for iOS
 https://github.com/x2on/OpenSSL-for-iPhone
-
-
 
 # Instructions
 
