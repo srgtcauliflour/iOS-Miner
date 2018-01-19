@@ -1,11 +1,7 @@
-# MobileMiner
+# iOS Miner
 CPU Miner for ARM64 iOS Devices
 
-This is a fork of Lucas Jones's cpuminer-multi, ( https://github.com/lucasjones/cpuminer-multi ) compiled for arm64 iOS devices. Credits go to the initial developers and contributors.
-
-# Compiled iOS App
-http://www.mediafire.com/file/f6qzt8jv26wtqm6/MobileMiner.ipa
-
+This is a fork of Lucas Jones's cpuminer-multi, ( https://github.com/lucasjones/cpuminer-multi ) compiled for arm64 iOS devices. Credits go to the initial developers and contributors. It was then forked from Limneos's MobileMiner ( https://github.com/limneos/MobileMiner ) and further improved upon.
 
 # Changes
 
