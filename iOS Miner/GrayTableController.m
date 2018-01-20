@@ -17,7 +17,7 @@
     
     self.tableView=[[UITableView alloc] initWithFrame:[[UIScreen mainScreen] bounds] style:UITableViewStylePlain];
     self.tableView.tableFooterView = [[UIView alloc] init];
-    self.tableView.backgroundColor=[UIColor colorWithRed:0.15 green:0.15 blue:0.15 alpha:1];
+    self.tableView.backgroundColor=[UIColor colorWithRed:0.50 green:0.55 blue:0.55 alpha:1.0];
     self.tableView.delegate=self;
     self.tableView.dataSource=self;
     self.tableView.separatorStyle=UITableViewCellSeparatorStyleNone;

@@ -272,7 +272,7 @@
     self.navigationItem.rightBarButtonItem=right;
     self.navigationItem.rightBarButtonItem.tintColor=[UIColor colorWithRed:1 green:0.8 blue:0 alpha:1];
     [right release];
-    self.view.backgroundColor=[UIColor colorWithRed:0.15 green:0.15 blue:0.15 alpha:1];
+    self.view.backgroundColor=[UIColor colorWithRed:0.50 green:0.55 blue:0.55 alpha:1.0];
     [self.tableView setSeparatorColor:[UIColor clearColor]];
     ((UITableView *)self.view).tableFooterView=[[UIView alloc] init];
     ((UITableView *)self.view).tableHeaderView=[[UIView alloc] initWithFrame:CGRectMake(0,0,self.view.frame.size.width,20)];

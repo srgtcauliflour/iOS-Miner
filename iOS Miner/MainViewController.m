@@ -63,7 +63,7 @@
 -(void)viewDidLoad{
     
     [super viewDidLoad];
-    self.view.backgroundColor=[UIColor colorWithRed:0.15 green:0.15 blue:0.15 alpha:1];
+    self.view.backgroundColor=[UIColor colorWithRed:0.50 green:0.55 blue:0.55 alpha:1.0];
     UITextView *textView=[[UITextView alloc] initWithFrame:CGRectMake(0,60,self.view.frame.size.width,self.view.frame.size.height-60)];
     textView.backgroundColor=[UIColor clearColor];
     textView.textColor=[UIColor whiteColor];
@@ -94,7 +94,7 @@
 }
 -(void)viewDidLoad{
     
-    self.view.backgroundColor=[UIColor colorWithRed:0.15 green:0.15 blue:0.15 alpha:1];
+    self.view.backgroundColor=[UIColor colorWithRed:0.50 green:0.55 blue:0.55 alpha:1.0];
     UIBarButtonItem *right=[[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(dismissMe:)];
     self.navigationItem.rightBarButtonItem=right;
     [right release];
@@ -213,7 +213,7 @@
             label.textAlignment=NSTextAlignmentCenter;
             label.text=@"Copied!";
             label.font=[UIFont boldSystemFontOfSize:27];
-            label.textColor=[UIColor colorWithRed:0.15 green:0.15 blue:0.15 alpha:1];
+            label.textColor=[UIColor colorWithRed:0.50 green:0.55 blue:0.55 alpha:1.0];
             [copied addSubview:label];
         }
         
@@ -675,7 +675,7 @@ int getloadavg (double loadavg[], int nelem);
             label.textAlignment=NSTextAlignmentCenter;
             label.text=@"Copied!";
             label.font=[UIFont boldSystemFontOfSize:27];
-            label.textColor=[UIColor colorWithRed:0.15 green:0.15 blue:0.15 alpha:1];
+            label.textColor=[UIColor colorWithRed:0.50 green:0.55 blue:0.55 alpha:1.0];
             [copied addSubview:label];
         }
         
@@ -712,7 +712,7 @@ int getloadavg (double loadavg[], int nelem);
 }
 -(void)viewDidLoad{
     [super viewDidLoad];
-    self.view.backgroundColor=[UIColor colorWithRed:0.15 green:0.15 blue:0.15 alpha:1];
+    self.view.backgroundColor=[UIColor colorWithRed:0.50 green:0.55 blue:0.55 alpha:1.0];
     
 }
 -(void)openDonations:(id)sender{
@@ -760,7 +760,7 @@ int getloadavg (double loadavg[], int nelem);
         [mineButton setBackgroundImage:[UIImage imageNamed:@"buttonbg-selected"] forState:UIControlStateDisabled];
         [mineButton setBackgroundImage:[UIImage imageNamed:@"buttonbg-selected"] forState:(UIControlState)5];
         
-        [mineButton setTitleColor:[UIColor colorWithRed:0.15 green:0.15 blue:0.15 alpha:1] forState:UIControlStateNormal];
+        [mineButton setTitleColor:[UIColor colorWithRed:0.50 green:0.55 blue:0.55 alpha:1.0] forState:UIControlStateNormal];
         [mineButton setTitleColor:[UIColor colorWithRed:1 green:0.8 blue:0 alpha:1] forState:UIControlStateSelected];
         [mineButton setTitleColor:[UIColor colorWithRed:1 green:0.8 blue:0 alpha:0.5] forState:(UIControlState)5];
         
