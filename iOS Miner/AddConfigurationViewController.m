@@ -18,9 +18,9 @@
 
 @implementation EditCell
 -(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
-    
+
     if (self=[super initWithStyle:style reuseIdentifier:reuseIdentifier]){
-        
+
         self.backgroundColor=[UIColor clearColor];
         self.contentView.backgroundColor=[UIColor colorWithRed:0.25 green:0.25 blue:0.25 alpha:1];
         self.contentView.layer.cornerRadius=15;
@@ -28,13 +28,13 @@
         self.contentView.layer.borderWidth=1;
         self.contentView.layer.borderColor=[[UIColor colorWithRed:0.3 green:0.3 blue:0.3 alpha:1] CGColor];
         self.selectedBackgroundView=[UIView new];
-        
+
         self.textField=[[UITextField alloc] initWithFrame:CGRectZero];
         self.textField.textColor=[UIColor whiteColor];
         self.textField.clearButtonMode=UITextFieldViewModeAlways;
         self.textField.autocorrectionType=UITextAutocorrectionTypeNo;
         self.textField.autocapitalizationType=UITextAutocapitalizationTypeNone;
-        
+
         UIToolbar *keyboardDoneButtonView = [[UIToolbar alloc] init];
         [keyboardDoneButtonView sizeToFit];
         UIBarButtonItem *flexBarButton = [[UIBarButtonItem alloc]
@@ -43,30 +43,30 @@
         UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithTitle:@"Done"
                                                                        style:UIBarButtonItemStyleDone target:self
                                                                       action:@selector(doneClicked:)];
-        
+
         [keyboardDoneButtonView setItems:[NSArray arrayWithObjects:flexBarButton,doneButton, nil]];
         [flexBarButton release];
         [doneButton release];
         self.textField.inputAccessoryView = keyboardDoneButtonView;
-        
+
     }
-    
+
     return self;
 }
 -(void)setTextfieldPlaceholder:(NSString *)text{
-    
+
     NSAttributedString * attr = [[NSAttributedString alloc] initWithString:self.textField.placeholder attributes:@{NSForegroundColorAttributeName: [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.5]}];
     self.textField.attributedPlaceholder = attr;
     [attr release];
-    
+
 }
 -(void)doneClicked:(id)sender{
-    
+
     [self.textField resignFirstResponder];
-    
+
 }
 -(void)layoutSubviews{
-    
+
     [super layoutSubviews];
     if (self.textField.placeholder){
         self.contentView.frame=CGRectMake(20,10,self.contentView.frame.size.width-40,self.contentView.frame.size.height-20);
@@ -76,9 +76,9 @@
         self.contentView.layer.borderWidth=0;
         self.contentView.frame=CGRectMake(5,0,self.contentView.frame.size.width-10,self.contentView.frame.size.height);
     }
-    
+
     [self.contentView addSubview:self.textField];
-    
+
     if (self.textField.placeholder){
         [self setTextfieldPlaceholder:self.textField.placeholder];
         self.textField.frame=CGRectMake(20,0,self.contentView.frame.size.width-40,self.contentView.frame.size.height);
@@ -93,13 +93,13 @@
         self.textField.alpha=0;
         self.textLabel.textColor=[UIColor whiteColor];
     }
-    
+
 }
 -(void)dealloc{
-    
+
     [self.textField release];
     [super dealloc];
-    
+
 }
 @end
 
@@ -109,19 +109,19 @@
     NSUserDefaults *defaults;
 }
 -(id)initWithConfiguration:(NSDictionary *)configuration{
-    
-    
+
+
     if (self=[super initWithStyle:UITableViewStylePlain]){
-        
+
         config=[configuration retain];
         defaults=[NSUserDefaults standardUserDefaults];
         [defaults synchronize];
         self.title=configuration ? @"Edit Configuration" : @"Add Configuration";
-        
-        
+
+
     }
     return self;
-    
+
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
@@ -133,13 +133,13 @@
     return 20;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return config ? 12 : 10;
+    return config ? 14 : 12;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     if (indexPath.row==12){
-        
+
         NSArray *configs=[defaults objectForKey:CONFIGS_KEY];
         if ([configs count]==1){
             [self simpleAlert:@"You need to have at least one configuration."];
@@ -150,7 +150,7 @@
                 [self deleteCurrentConfig];
             }];
             [alert addAction:okAction];
-            
+
             UIAlertAction *cancel=[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *a){}];
             [alert addAction:cancel];
             [self presentViewController:alert animated:YES completion:nil];
@@ -159,17 +159,17 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+
     NSString *REUSEID = [NSString stringWithFormat:@"Cell-%lu-%lu",indexPath.section,indexPath.row];
     EditCell *cell=(EditCell*)[tableView dequeueReusableCellWithIdentifier:REUSEID];
-    
+
     NSInteger row=indexPath.row;
     NSString *placeholder=NULL;
     NSString *text=NULL;
     NSString *textFieldText=NULL;
-    
+
     NSArray *configs=[defaults objectForKey:CONFIGS_KEY];
-    
+
     //titles
     if (row==0){
         text=@"Configuration Name:";
@@ -189,21 +189,21 @@
     if (row==10){
         text=@"Threads:";
     }
-    
+
     // values
     if (row==1){
         placeholder=[NSString stringWithFormat:@"Config%lu",[configs count]+1];
         textFieldText=[config objectForKey:@"name"];
     }
     if (row==3){
-        placeholder=@"stratum+tcp://etn-pool.proxpool.com:443";
+        placeholder=@"stratum+tcp://etn.rustylock.club:23333";
         textFieldText=[config objectForKey:@"url"];
     }
     if (row==5){
-        placeholder=@"etnkQxbTWXkZ7Y8oLT9Qzu4Z5yVwzBLoCH1Tw8o19qqmCEDDSMwQAMdJKTkvnmed4qgUMC1geaaE9Mh1uD6FNe9P18fHNatGzN";
+        placeholder=@"etnkEsWJHKCCFfyRCbRrZNGT54AZp7VoaQiAKDycNMz84yo8WpqBmFHTPVToeiEpaZ5FCXxt27V5SL9eXpXhCwr7291xRsZqpn";
         textFieldText=[config objectForKey:@"user"];
     }
-    
+
     if (row==7){
         placeholder=@"cryptonight";
         textFieldText=[config objectForKey:@"algo"];
@@ -211,17 +211,17 @@
     if (row==9){
         placeholder=@"x";
         textFieldText=[config objectForKey:@"pass"];
-        
+
     }
     if (row==11){
         placeholder=@"2";
         textFieldText=[config objectForKey:@"threads"];
     }
-    
+
     if (!cell){
         cell=[[EditCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:REUSEID];
     }
-    
+
     if (row==11){
         UIStepper *stepper=[[UIStepper alloc] initWithFrame:CGRectZero];
         [stepper addTarget:self action:@selector(stepperChanged:) forControlEvents:UIControlEventTouchUpInside];
@@ -229,16 +229,16 @@
         stepper.maximumValue=8;
         stepper.stepValue=1;
         stepper.wraps=NO;
-        stepper.value=[config objectForKey:@"threads"] ? [[config objectForKey:@"threads"] intValue] : 2;
+        stepper.value=[config objectForKey:@"threads"] ? [[config objectForKey:@"threads"] intValue]:2 ;
         CGRect frame=cell.textField.frame;
         frame.size.width=cell.contentView.frame.size.width-150;
         cell.textField.frame=frame;
         cell.textField.clearButtonMode=UITextFieldViewModeNever;
         cell.textField.userInteractionEnabled=NO;
-        cell.textField.text= [config objectForKey:@"threads"] ?: @"2";
+        cell.textField.text=[config objectForKey:@"threads"] ?: @"2";
         cell.accessoryView=stepper;
         [stepper release];
-        
+
     }
     if (row==0){
         cell.textField.autocapitalizationType=UITextAutocapitalizationTypeAllCharacters;
@@ -249,7 +249,7 @@
         cell.textField.text=textFieldText;
     }
     if (row==12){
-        
+
         cell.textField.placeholder=@"Delete";
         cell.textField.text=@"Delete";
         cell.contentView.backgroundColor=[UIColor redColor];
@@ -257,16 +257,16 @@
         cell.textField.textAlignment=NSTextAlignmentCenter;
         cell.textField.clearButtonMode=UITextFieldViewModeNever;
     }
-    
+
     return cell;
 }
 -(void)stepperChanged:(UIStepper *)sender{
     int value = [sender value];
-    EditCell *cell=(EditCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:9  inSection:0]];
+    EditCell *cell=(EditCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:11  inSection:0]];
     cell.textField.text=[NSString stringWithFormat:@"%d", (int)value];
 }
 -(void)viewDidLoad{
-    
+
     [super viewDidLoad];
     UIBarButtonItem *right=[[UIBarButtonItem alloc] initWithTitle:config ? @"Save" : @"Done" style:UIBarButtonItemStyleDone target:self action:@selector(addConfig:)];
     self.navigationItem.rightBarButtonItem=right;
@@ -286,45 +286,46 @@
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 - (BOOL)isModal {
-    
+
     return ![[self parentViewController] isKindOfClass:NSClassFromString(@"SettingsNavigationController")];
 }
 -(void)addConfig:(UIButton*)button{
-    
-    
+
+
     EditCell *cell5=(EditCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1  inSection:0]];
     EditCell *cell1=(EditCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:3  inSection:0]];
     EditCell *cell2=(EditCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:5  inSection:0]];
     EditCell *cell3=(EditCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:7  inSection:0]];
     EditCell *cell4=(EditCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:9  inSection:0]];
     EditCell *cell6=(EditCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:11 inSection:0]];
-    
-    
+
+
     NSString *url= [cell1.textField.text length] ? cell1.textField.text : cell1.textField.placeholder;
     NSString *user= [cell2.textField.text length] ? cell2.textField.text : cell2.textField.placeholder;
     NSString *algo= [cell3.textField.text length] ? cell3.textField.text : cell3.textField.placeholder;
     NSString *pass= [cell4.textField.text length] ? cell4.textField.text : cell4.textField.placeholder;
-    NSString *threads= [cell6.textField.text length] ? cell6.textField.text : cell6.textField.placeholder;
     NSString *name= [cell5.textField.text length] ? cell5.textField.text : cell5.textField.placeholder;
-    
-    
+    NSString *threads= [cell6.textField.text length] ? cell6.textField.text : cell6.textField.placeholder;
+
+
+
     NSMutableArray *configs=[defaults mutableArrayValueForKey:CONFIGS_KEY] ?: [NSMutableArray array];
     NSDictionary *foundConfig=NULL;
     for (NSDictionary *aconfig in configs){
-        if ([[aconfig objectForKey:@"url"] isEqual:url]
+        if ([[config objectForKey:@"url"] isEqual:url]
             && [[aconfig objectForKey:@"user"] isEqual:user]
             && [[aconfig objectForKey:@"algo"] isEqual:algo]
             && [[aconfig objectForKey:@"pass"] isEqual:pass]
             && [[aconfig objectForKey:@"threads"] isEqual:threads]){
-            
-            foundConfig=aconfig;
-            if (!config){
+
+            foundConfig=config;
+            if (!aconfig){
                 [self simpleAlert:@"This configuration already exists."];
             }
             break;
         }
         else if ([[aconfig objectForKey:@"name"] isEqual:name]){
-            foundConfig=aconfig;
+            foundConfig=config;
             if (!config){
                 [self simpleAlert:@"A configuration with the same name already exists."];
             }
@@ -339,7 +340,7 @@
     }
     if (!config){
         if (!foundConfig){
-            
+
             NSMutableDictionary *dict=[NSMutableDictionary dictionary];
             [dict setObject:url forKey:@"url"];
             [dict setObject:user forKey:@"user"];
@@ -352,23 +353,23 @@
             CFRelease(theUUID);
             [dict setObject:(id)uuid forKey:@"id"];
             [configs addObject:dict];
-            
+
             NSArray *immutableConfigs=[configs copy];
             [defaults setObject:immutableConfigs forKey:CONFIGS_KEY];
             [immutableConfigs release];
             [defaults synchronize];
-            
-            
+
+
             if ([self isModal]) {
                 [self dismissViewControllerAnimated:YES completion:NULL];
             }
             else{
                 [[self navigationController] popViewControllerAnimated:YES];
             }
-            
-            
+
+
         }
-        
+
     }
     else{
         NSMutableDictionary *mutableConfig=[config mutableCopy];
@@ -384,25 +385,25 @@
         [defaults setObject:immutableConfigs forKey:CONFIGS_KEY];
         [immutableConfigs release];
         [mutableConfig release];
-        
+
         [defaults synchronize];
         if ([self isModal]) {
-            
+
             [self dismissViewControllerAnimated:YES completion:NULL];
         }
         else{
             [[self navigationController] popViewControllerAnimated:YES];
         }
-        
-        
+
+
     }
-    
-    
-    
+
+
+
 }
 -(void)deleteCurrentConfig{
-    
-    
+
+
     NSMutableArray *configs=[defaults mutableArrayValueForKey:CONFIGS_KEY];
     NSDictionary *foundDict=NULL;
     for (NSDictionary *dict in configs){
@@ -417,7 +418,7 @@
     [immutableConfigs release];
     [defaults synchronize];
     [[self navigationController] popViewControllerAnimated:YES];
-    
+
 }
 -(void)simpleAlert:(NSString *)alertString{
     UIAlertController *alert=[UIAlertController alertControllerWithTitle:@"iOS Miner" message:alertString preferredStyle:UIAlertControllerStyleAlert];

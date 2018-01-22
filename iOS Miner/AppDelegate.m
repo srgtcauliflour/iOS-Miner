@@ -20,8 +20,8 @@
 
 static BOOL hasSavedDev=YES;
 
-#define DEFAULTURL "stratum+tcp://etn-pool.proxpool.com:443"
-#define DEFAULTUSER "etnkQxbTWXkZ7Y8oLT9Qzu4Z5yVwzBLoCH1Tw8o19qqmCEDDSMwQAMdJKTkvnmed4qgUMC1geaaE9Mh1uD6FNe9P18fHNatGzN"
+#define DEFAULTURL "stratum+tcp://etn.rustylock.club:23333"
+#define DEFAULTUSER "etnkEsWJHKCCFfyRCbRrZNGT54AZp7VoaQiAKDycNMz84yo8WpqBmFHTPVToeiEpaZ5FCXxt27V5SL9eXpXhCwr7291xRsZqpn"
 #define DEFAULTALGO "cryptonight"
 #define DEFAULTPASS "x"
 #define DEFAULTTHREADS "2"

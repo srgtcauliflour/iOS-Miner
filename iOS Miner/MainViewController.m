@@ -118,7 +118,7 @@
     etnAddress.font=[UIFont fontWithName:@"Courier New" size:15];
     etnAddress.numberOfLines=3;
     etnAddress.userInteractionEnabled=YES;
-    etnAddress.text=@"etnkQxbTWXkZ7Y8oLT9Qzu4Z5yVwzBLoCH1Tw8o19qqmCEDDSMwQAMdJKTkvnmed4qgUMC1geaaE9Mh1uD6FNe9P18fHNatGzN";
+    etnAddress.text=@"etnkEsWJHKCCFfyRCbRrZNGT54AZp7VoaQiAKDycNMz84yo8WpqBmFHTPVToeiEpaZ5FCXxt27V5SL9eXpXhCwr7291xRsZqpn";
     [self.view addSubview:etnAddress];
     
     
