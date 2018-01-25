@@ -22,11 +22,11 @@
     if (self=[super initWithStyle:style reuseIdentifier:reuseIdentifier]){
 
         self.backgroundColor=[UIColor clearColor];
-        self.contentView.backgroundColor=[UIColor colorWithRed:0.25 green:0.25 blue:0.25 alpha:1];
+        self.contentView.backgroundColor=[UIColor colorWithRed:0.07 green:0.15 blue:0.21 alpha:1];
         self.contentView.layer.cornerRadius=15;
         self.contentView.layer.masksToBounds=YES;
         self.contentView.layer.borderWidth=1;
-        self.contentView.layer.borderColor=[[UIColor colorWithRed:0.3 green:0.3 blue:0.3 alpha:1] CGColor];
+        self.contentView.layer.borderColor=[[UIColor colorWithRed:0.17 green:0.24 blue:0.31 alpha:1.0] CGColor];
         self.selectedBackgroundView=[UIView new];
 
         self.textField=[[UITextField alloc] initWithFrame:CGRectZero];
@@ -55,7 +55,7 @@
 }
 -(void)setTextfieldPlaceholder:(NSString *)text{
 
-    NSAttributedString * attr = [[NSAttributedString alloc] initWithString:self.textField.placeholder attributes:@{NSForegroundColorAttributeName: [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.5]}];
+    NSAttributedString * attr = [[NSAttributedString alloc] initWithString:self.textField.placeholder attributes:@{NSForegroundColorAttributeName: [UIColor colorWithRed:0.51 green:0.53 blue:0.52 alpha:0.5]}];
     self.textField.attributedPlaceholder = attr;
     [attr release];
 
@@ -133,12 +133,12 @@
     return 20;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return config ? 14 : 12;
+    return config ? 15 : 13;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
-    if (indexPath.row==12){
+    if (indexPath.row==13){
 
         NSArray *configs=[defaults objectForKey:CONFIGS_KEY];
         if ([configs count]==1){
@@ -221,7 +221,7 @@
     if (!cell){
         cell=[[EditCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:REUSEID];
     }
-
+    
     if (row==11){
         UIStepper *stepper=[[UIStepper alloc] initWithFrame:CGRectZero];
         [stepper addTarget:self action:@selector(stepperChanged:) forControlEvents:UIControlEventTouchUpInside];
@@ -248,7 +248,7 @@
     if (config){
         cell.textField.text=textFieldText;
     }
-    if (row==12){
+    if (row==13){
 
         cell.textField.placeholder=@"Delete";
         cell.textField.text=@"Delete";
@@ -265,14 +265,15 @@
     EditCell *cell=(EditCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:11  inSection:0]];
     cell.textField.text=[NSString stringWithFormat:@"%d", (int)value];
 }
+    
 -(void)viewDidLoad{
 
     [super viewDidLoad];
     UIBarButtonItem *right=[[UIBarButtonItem alloc] initWithTitle:config ? @"Save" : @"Done" style:UIBarButtonItemStyleDone target:self action:@selector(addConfig:)];
     self.navigationItem.rightBarButtonItem=right;
-    self.navigationItem.rightBarButtonItem.tintColor=[UIColor colorWithRed:1 green:0.8 blue:0 alpha:1];
+    self.navigationItem.rightBarButtonItem.tintColor=[UIColor colorWithRed:0.07 green:0.15 blue:0.21 alpha:1.0];
     [right release];
-    self.view.backgroundColor=[UIColor colorWithRed:0.50 green:0.55 blue:0.55 alpha:1.0];
+    self.view.backgroundColor=[UIColor colorWithRed:0.51 green:0.53 blue:0.52 alpha:1.0];
     [self.tableView setSeparatorColor:[UIColor clearColor]];
     ((UITableView *)self.view).tableFooterView=[[UIView alloc] init];
     ((UITableView *)self.view).tableHeaderView=[[UIView alloc] initWithFrame:CGRectMake(0,0,self.view.frame.size.width,20)];

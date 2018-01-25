@@ -63,7 +63,7 @@
 -(void)viewDidLoad{
     
     [super viewDidLoad];
-    self.view.backgroundColor=[UIColor colorWithRed:0.50 green:0.55 blue:0.55 alpha:1.0];
+    self.view.backgroundColor=[UIColor colorWithRed:0.51 green:0.53 blue:0.52 alpha:1.0];
     UITextView *textView=[[UITextView alloc] initWithFrame:CGRectMake(0,60,self.view.frame.size.width,self.view.frame.size.height-60)];
     textView.backgroundColor=[UIColor clearColor];
     textView.textColor=[UIColor whiteColor];
@@ -94,7 +94,7 @@
 }
 -(void)viewDidLoad{
     
-    self.view.backgroundColor=[UIColor colorWithRed:0.50 green:0.55 blue:0.55 alpha:1.0];
+    self.view.backgroundColor=[UIColor colorWithRed:0.51 green:0.53 blue:0.52 alpha:1.0];
     UIBarButtonItem *right=[[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(dismissMe:)];
     self.navigationItem.rightBarButtonItem=right;
     [right release];
@@ -114,7 +114,7 @@
     
     etnAddress=[[InfoLabel alloc] initWithFrame:CGRectMake(20,180+20,self.view.frame.size.width-40,70)];
     etnAddress.textAlignment=NSTextAlignmentLeft;
-    etnAddress.backgroundColor=[UIColor colorWithRed:0.25 green:0.25 blue:0.25 alpha:1];
+    etnAddress.backgroundColor=[UIColor colorWithRed:0.07 green:0.15 blue:0.21 alpha:1];
     etnAddress.font=[UIFont fontWithName:@"Courier New" size:15];
     etnAddress.numberOfLines=3;
     etnAddress.userInteractionEnabled=YES;
@@ -130,7 +130,7 @@
     
     xmrAddress=[[InfoLabel alloc] initWithFrame:CGRectMake(20,285+20,self.view.frame.size.width-40,70)];
     xmrAddress.textAlignment=NSTextAlignmentLeft;
-    xmrAddress.backgroundColor=[UIColor colorWithRed:0.25 green:0.25 blue:0.25 alpha:1];
+    xmrAddress.backgroundColor=[UIColor colorWithRed:0.07 green:0.15 blue:0.21 alpha:1];
     xmrAddress.font=[UIFont fontWithName:@"Courier New" size:15];
     xmrAddress.numberOfLines=3;
     xmrAddress.userInteractionEnabled=YES;
@@ -145,7 +145,7 @@
     
     btcAddress=[[InfoLabel alloc] initWithFrame:CGRectMake(20,390+20,self.view.frame.size.width-40,30)];
     btcAddress.textAlignment=NSTextAlignmentLeft;
-    btcAddress.backgroundColor=[UIColor colorWithRed:0.25 green:0.25 blue:0.25 alpha:1];
+    btcAddress.backgroundColor=[UIColor colorWithRed:0.07 green:0.15 blue:0.21 alpha:1];
     btcAddress.font=[UIFont fontWithName:@"Courier New" size:15];
     btcAddress.numberOfLines=3;
     btcAddress.userInteractionEnabled=YES;
@@ -206,14 +206,14 @@
         [pb setString:((UILabel *)sender.view).text];
         if (!copied){
             copied=[[UIView alloc] initWithFrame:CGRectMake(0,-60,self.view.frame.size.width,60)];
-            copied.backgroundColor=[UIColor colorWithRed:1 green:0.8 blue:0 alpha:1];
+            copied.backgroundColor=[UIColor colorWithRed:0.07 green:0.15 blue:0.21 alpha:1.0];
             copied.layer.cornerRadius=15;
             copied.layer.masksToBounds=YES;
             label=[[UILabel alloc] initWithFrame:CGRectMake(0,10,self.view.frame.size.width,40)];
             label.textAlignment=NSTextAlignmentCenter;
             label.text=@"Copied!";
             label.font=[UIFont boldSystemFontOfSize:27];
-            label.textColor=[UIColor colorWithRed:0.50 green:0.55 blue:0.55 alpha:1.0];
+            label.textColor=[UIColor colorWithRed:0.51 green:0.53 blue:0.52 alpha:1.0];
             [copied addSubview:label];
         }
         
@@ -543,7 +543,7 @@ int getloadavg (double loadavg[], int nelem);
         cell.textLabel.text=@"Keep Alive in Background";
         cell.detailTextLabel.text=@"Force-keep running in background";
         UISwitch *switchView = [[UISwitch alloc] initWithFrame:CGRectZero];
-        switchView.onTintColor=[UIColor colorWithRed:1 green:0.8 blue:0 alpha:1];
+        switchView.onTintColor=[UIColor colorWithRed:0.07 green:0.15 blue:0.21 alpha:1.0];
         cell.accessoryView = switchView;
         BOOL isOn = [defaults objectForKey:@"inBackground"] ?  [defaults boolForKey:@"inBackground"] : YES;
         [switchView setOn:isOn animated:NO];
@@ -555,7 +555,7 @@ int getloadavg (double loadavg[], int nelem);
         cell.textLabel.text=@"Allow Notifications";
         cell.detailTextLabel.text=@"Status updates while backgrounded";
         UISwitch *switchView = [[UISwitch alloc] initWithFrame:CGRectZero];
-        switchView.onTintColor=[UIColor colorWithRed:1 green:0.8 blue:0 alpha:1];
+        switchView.onTintColor=[UIColor colorWithRed:0.07 green:0.15 blue:0.21 alpha:1.0];
         cell.accessoryView = switchView;
         cell.hasSeparator=YES;
         
@@ -668,14 +668,14 @@ int getloadavg (double loadavg[], int nelem);
         [pb setString:((UILabel *)sender.view).text];
         if (!copied){
             copied=[[UIView alloc] initWithFrame:CGRectMake(0,-60,self.view.frame.size.width,60)];
-            copied.backgroundColor=[UIColor colorWithRed:1 green:0.8 blue:0 alpha:1];
+            copied.backgroundColor=[UIColor colorWithRed:0.07 green:0.15 blue:0.21 alpha:1.0];
             copied.layer.cornerRadius=15;
             copied.layer.masksToBounds=YES;
             UILabel *label=[[UILabel alloc] initWithFrame:CGRectMake(0,10,self.view.frame.size.width,40)];
             label.textAlignment=NSTextAlignmentCenter;
             label.text=@"Copied!";
             label.font=[UIFont boldSystemFontOfSize:27];
-            label.textColor=[UIColor colorWithRed:0.50 green:0.55 blue:0.55 alpha:1.0];
+            label.textColor=[UIColor colorWithRed:0.51 green:0.53 blue:0.52 alpha:1.0];
             [copied addSubview:label];
         }
         
@@ -712,7 +712,7 @@ int getloadavg (double loadavg[], int nelem);
 }
 -(void)viewDidLoad{
     [super viewDidLoad];
-    self.view.backgroundColor=[UIColor colorWithRed:0.50 green:0.55 blue:0.55 alpha:1.0];
+    self.view.backgroundColor=[UIColor colorWithRed:0.51 green:0.53 blue:0.52 alpha:1.0];
     
 }
 -(void)openDonations:(id)sender{
@@ -736,12 +736,12 @@ int getloadavg (double loadavg[], int nelem);
     if (!mineButton){
         UIBarButtonItem *right=[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"gear"] style:UIBarButtonItemStylePlain target:self action:@selector(openSettings:)];
         self.navigationItem.rightBarButtonItem=right;
-        self.navigationItem.rightBarButtonItem.tintColor=[UIColor colorWithRed:1 green:0.8 blue:0 alpha:1];
+        self.navigationItem.rightBarButtonItem.tintColor=[UIColor colorWithRed:0.07 green:0.15 blue:0.21 alpha:1.0];
         [right release];
         
         UIBarButtonItem *left=[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"love"] style:UIBarButtonItemStylePlain target:self action:@selector(openDonations:)];
         self.navigationItem.leftBarButtonItem=left;
-        self.navigationItem.leftBarButtonItem.tintColor=[UIColor colorWithRed:1 green:0.8 blue:0 alpha:1];
+        self.navigationItem.leftBarButtonItem.tintColor=[UIColor colorWithRed:0.07 green:0.15 blue:0.21 alpha:1.0];
         [left release];
         
         mineButton=[[UIButton buttonWithType:UIButtonTypeCustom] retain];
@@ -760,11 +760,11 @@ int getloadavg (double loadavg[], int nelem);
         [mineButton setBackgroundImage:[UIImage imageNamed:@"buttonbg-selected"] forState:UIControlStateDisabled];
         [mineButton setBackgroundImage:[UIImage imageNamed:@"buttonbg-selected"] forState:(UIControlState)5];
         
-        [mineButton setTitleColor:[UIColor colorWithRed:0.50 green:0.55 blue:0.55 alpha:1.0] forState:UIControlStateNormal];
-        [mineButton setTitleColor:[UIColor colorWithRed:1 green:0.8 blue:0 alpha:1] forState:UIControlStateSelected];
-        [mineButton setTitleColor:[UIColor colorWithRed:1 green:0.8 blue:0 alpha:0.5] forState:(UIControlState)5];
+        [mineButton setTitleColor:[UIColor colorWithRed:0.51 green:0.53 blue:0.52 alpha:1.0] forState:UIControlStateNormal];
+        [mineButton setTitleColor:[UIColor colorWithRed:0.51 green:0.53 blue:0.52 alpha:1.0] forState:UIControlStateSelected];
+        [mineButton setTitleColor:[UIColor colorWithRed:0.51 green:0.53 blue:0.52 alpha:0.5] forState:(UIControlState)5];
         
-        [mineButton setTitleColor:[UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.7] forState:UIControlStateDisabled];
+        [mineButton setTitleColor:[UIColor colorWithRed:0.07 green:0.15 blue:0.21 alpha:0.7] forState:UIControlStateDisabled];
         
         [mineButton addTarget:self action:@selector(toggleMining:) forControlEvents:UIControlEventTouchUpInside];
         mineButton.frame=CGRectMake(self.view.frame.size.width/2-210/2,self.view.frame.size.height-140,210,40);
@@ -800,7 +800,7 @@ int getloadavg (double loadavg[], int nelem);
         diffValue.font=[UIFont systemFontOfSize:18];
         diffValue.textColor=[UIColor colorWithRed:15.f/255.f green:83.f/255.f blue:1 alpha:1];
         uptimeValue.font=[UIFont fontWithName:@"Courier New" size:15];
-        hashesValue.textColor=[UIColor colorWithRed:0.1 green:0.7 blue:0 alpha:1];
+        hashesValue.textColor=[UIColor colorWithRed:0.07 green:0.15 blue:0.21 alpha:1.0];
         totalsValue.textColor=[UIColor colorWithRed:151.f/255.f green:197.f/255.f blue:236.f/255.f alpha:1];
         
         hashesValue.textAlignment=NSTextAlignmentRight;
@@ -898,7 +898,7 @@ int getloadavg (double loadavg[], int nelem);
         
         confLabel=[[InfoLabel alloc] initWithFrame:CGRectMake(0,-30,self.view.frame.size.width,20)];
         confLabel.font=[UIFont boldSystemFontOfSize:17];
-        confLabel.textColor=[UIColor colorWithRed:1 green:0.8 blue:0 alpha:1];
+        confLabel.textColor=[UIColor colorWithRed:0.07 green:0.15 blue:0.21 alpha:1.0];
         confLabel.textAlignment=NSTextAlignmentCenter;
         confLabel.text=@"Active Mining Configuration:";
         
@@ -906,8 +906,8 @@ int getloadavg (double loadavg[], int nelem);
         nameLabel.font=[UIFont boldSystemFontOfSize:15];
         nameValue=[[InfoLabel alloc] initWithFrame:CGRectMake(20,nameLabel.frame.origin.y+26,activeView.frame.size.width-40,17)];
         
-        nameValue.backgroundColor=[UIColor colorWithRed:0.23 green:0.23 blue:0.23 alpha:0.7];
-        nameValue.layer.borderColor=[[UIColor colorWithRed:0.22 green:0.22 blue:0.22 alpha:0.6] CGColor];
+        nameValue.backgroundColor=[UIColor colorWithRed:0.22 green:0.24 blue:0.25 alpha:0.7];
+        nameValue.layer.borderColor=[[UIColor colorWithRed:0.21 green:0.23 blue:0.24 alpha:0.6] CGColor];
         nameValue.layer.borderWidth=0.5;
         
         
@@ -921,8 +921,8 @@ int getloadavg (double loadavg[], int nelem);
         [longer release];
         
         urlValue.lineBreakMode=NSLineBreakByCharWrapping;
-        urlValue.backgroundColor=[UIColor colorWithRed:0.23 green:0.23 blue:0.23 alpha:0.7];
-        urlValue.layer.borderColor=[[UIColor colorWithRed:0.22 green:0.22 blue:0.22 alpha:0.6] CGColor];
+        urlValue.backgroundColor=[UIColor colorWithRed:0.22 green:0.24 blue:0.25 alpha:0.7];
+        urlValue.layer.borderColor=[[UIColor colorWithRed:0.21 green:0.23 blue:0.24 alpha:0.6] CGColor];
         urlValue.layer.borderWidth=0.5;
         userLabel=[[InfoLabel alloc] initWithFrame:CGRectMake(20,urlValue.frame.origin.y+urlValue.frame.size.height+7,80,30)];
         userLabel.font=[UIFont boldSystemFontOfSize:15];
@@ -935,8 +935,8 @@ int getloadavg (double loadavg[], int nelem);
         userValue.numberOfLines=0;
         userValue.lineBreakMode=NSLineBreakByWordWrapping;
         
-        userValue.backgroundColor=[UIColor colorWithRed:0.23 green:0.23 blue:0.23 alpha:0.7];
-        userValue.layer.borderColor=[[UIColor colorWithRed:0.22 green:0.22 blue:0.22 alpha:0.6] CGColor];
+        userValue.backgroundColor=[UIColor colorWithRed:0.22 green:0.24 blue:0.25 alpha:0.7];
+        userValue.layer.borderColor=[[UIColor colorWithRed:0.21 green:0.23 blue:0.24 alpha:0.6] CGColor];
         userValue.layer.borderWidth=0.5;
         urlValue.userInteractionEnabled=YES;
         userValue.userInteractionEnabled=YES;
@@ -949,15 +949,15 @@ int getloadavg (double loadavg[], int nelem);
         passLabel.font=[UIFont boldSystemFontOfSize:15];
         passValue=[[InfoLabel alloc] initWithFrame:CGRectMake(20,passLabel.frame.origin.y+26,activeView.frame.size.width-40,17)];
         
-        passValue.backgroundColor=[UIColor colorWithRed:0.23 green:0.23 blue:0.23 alpha:0.7];
-        passValue.layer.borderColor=[[UIColor colorWithRed:0.22 green:0.22 blue:0.22 alpha:0.6] CGColor];
+        passValue.backgroundColor=[UIColor colorWithRed:0.22 green:0.24 blue:0.25 alpha:0.7];
+        passValue.layer.borderColor=[[UIColor colorWithRed:0.21 green:0.23 blue:0.24 alpha:0.6] CGColor];
         passValue.layer.borderWidth=0.5;
         
         threadsLabel=[[InfoLabel alloc] initWithFrame:CGRectMake(20,passValue.frame.origin.y+passValue.frame.size.height+7,80,30)];
         threadsLabel.font=[UIFont boldSystemFontOfSize:15];
         threadsValue=[[InfoLabel alloc] initWithFrame:CGRectMake(20,threadsLabel.frame.origin.y+26,activeView.frame.size.width-40,17)];
-        threadsValue.backgroundColor=[UIColor colorWithRed:0.23 green:0.23 blue:0.23 alpha:0.7];
-        threadsValue.layer.borderColor=[[UIColor colorWithRed:0.22 green:0.22 blue:0.22 alpha:0.6] CGColor];
+        threadsValue.backgroundColor=[UIColor colorWithRed:0.22 green:0.24 blue:0.25 alpha:0.7];
+        threadsValue.layer.borderColor=[[UIColor colorWithRed:0.21 green:0.23 blue:0.24 alpha:0.6] CGColor];
         threadsValue.layer.borderWidth=0.5;
         
         nameLabel.text=@"Name:";

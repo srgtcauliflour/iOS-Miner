@@ -18,7 +18,7 @@
 }
 -(void)viewDidLoad{
     [super viewDidLoad];
-    self.view.backgroundColor=[UIColor colorWithRed:0.50 green:0.55 blue:0.55 alpha:1.0];
+    self.view.backgroundColor=[UIColor colorWithRed:0.51 green:0.53 blue:0.52 alpha:1.0];
     UITextView *textView=[[UITextView alloc] initWithFrame:CGRectMake(0,60,self.view.frame.size.width,self.view.frame.size.height-60)];
     textView.backgroundColor=[UIColor clearColor];
     textView.textColor=[UIColor whiteColor];

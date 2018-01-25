@@ -97,14 +97,14 @@ static BOOL hasSavedDev=YES;
     [reachability startNotifier];
     
     // setup custom appearance for gray tables etc
-    UINavigationBar.appearance.barStyle = UIBarStyleBlack;
-    UINavigationBar.appearance.barTintColor = [UIColor colorWithRed:0.12 green:0.12 blue:0.12 alpha:1];
+    UINavigationBar.appearance.barStyle = UIBarStyleDefault;
+    UINavigationBar.appearance.barTintColor = [UIColor colorWithRed:0.22 green:0.24 blue:0.25 alpha:1.0];
     UINavigationBar.appearance.tintColor = [UIColor whiteColor];
     UIFont *navigationTitleFont = [UIFont systemFontOfSize:20];
     UINavigationBar.appearance.titleTextAttributes = @{NSFontAttributeName: navigationTitleFont};
-    UIBarButtonItem.appearance.tintColor=[UIColor colorWithRed:1 green:0.8 blue:0 alpha:1];
-    UIToolbar.appearance.barTintColor=[UIColor colorWithRed:0.12 green:0.12 blue:0.12 alpha:1];
-    UILabel.appearance.textColor=[UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:1];
+    UIBarButtonItem.appearance.tintColor=[UIColor colorWithRed:0.07 green:0.15 blue:0.21 alpha:1.0];
+    UIToolbar.appearance.barTintColor=[UIColor colorWithRed:0.22 green:0.24 blue:0.25 alpha:1.0];
+    UILabel.appearance.textColor=[UIColor whiteColor];
     UILabel.appearance.font=[UIFont systemFontOfSize:15];
     
     UIViewController *fakeRootController=[[UIViewController alloc] init];
@@ -112,7 +112,7 @@ static BOOL hasSavedDev=YES;
     
     // bottom view that displays coin rates
     statusView=[[UIView alloc] initWithFrame:CGRectMake(0,bounds.size.height-44,bounds.size.width,44)];
-    statusView.backgroundColor=[UIColor colorWithRed:0.12 green:0.12 blue:0.12 alpha:1];
+    statusView.backgroundColor=[UIColor colorWithRed:0.22 green:0.24 blue:0.25 alpha:1.0];
     
     etnLabel=[[UILabel alloc] initWithFrame:CGRectMake(0,0,bounds.size.width/2,44)];
     btcLabel=[[UILabel alloc] initWithFrame:CGRectMake(bounds.size.width/2,0,bounds.size.width/2,44)];
