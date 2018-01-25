@@ -906,8 +906,8 @@ int getloadavg (double loadavg[], int nelem);
         nameLabel.font=[UIFont boldSystemFontOfSize:15];
         nameValue=[[InfoLabel alloc] initWithFrame:CGRectMake(20,nameLabel.frame.origin.y+26,activeView.frame.size.width-40,17)];
         
-        nameValue.backgroundColor=[UIColor colorWithRed:0.22 green:0.24 blue:0.25 alpha:0.7];
-        nameValue.layer.borderColor=[[UIColor colorWithRed:0.21 green:0.23 blue:0.24 alpha:0.6] CGColor];
+        nameValue.backgroundColor=[UIColor colorWithRed:0.07 green:0.15 blue:0.21 alpha:0.7];
+        nameValue.layer.borderColor=[[UIColor colorWithRed:0.06 green:0.14 blue:0.20 alpha:0.6] CGColor];
         nameValue.layer.borderWidth=0.5;
         
         
@@ -921,8 +921,8 @@ int getloadavg (double loadavg[], int nelem);
         [longer release];
         
         urlValue.lineBreakMode=NSLineBreakByCharWrapping;
-        urlValue.backgroundColor=[UIColor colorWithRed:0.22 green:0.24 blue:0.25 alpha:0.7];
-        urlValue.layer.borderColor=[[UIColor colorWithRed:0.21 green:0.23 blue:0.24 alpha:0.6] CGColor];
+        urlValue.backgroundColor=[UIColor colorWithRed:0.07 green:0.15 blue:0.21 alpha:0.7];
+        urlValue.layer.borderColor=[[UIColor colorWithRed:0.06 green:0.14 blue:0.20 alpha:0.6] CGColor];
         urlValue.layer.borderWidth=0.5;
         userLabel=[[InfoLabel alloc] initWithFrame:CGRectMake(20,urlValue.frame.origin.y+urlValue.frame.size.height+7,80,30)];
         userLabel.font=[UIFont boldSystemFontOfSize:15];
@@ -935,8 +935,8 @@ int getloadavg (double loadavg[], int nelem);
         userValue.numberOfLines=0;
         userValue.lineBreakMode=NSLineBreakByWordWrapping;
         
-        userValue.backgroundColor=[UIColor colorWithRed:0.22 green:0.24 blue:0.25 alpha:0.7];
-        userValue.layer.borderColor=[[UIColor colorWithRed:0.21 green:0.23 blue:0.24 alpha:0.6] CGColor];
+        userValue.backgroundColor=[UIColor colorWithRed:0.07 green:0.15 blue:0.21 alpha:0.7];
+        userValue.layer.borderColor=[[UIColor colorWithRed:0.06 green:0.14 blue:0.20 alpha:0.6] CGColor];
         userValue.layer.borderWidth=0.5;
         urlValue.userInteractionEnabled=YES;
         userValue.userInteractionEnabled=YES;
@@ -949,15 +949,15 @@ int getloadavg (double loadavg[], int nelem);
         passLabel.font=[UIFont boldSystemFontOfSize:15];
         passValue=[[InfoLabel alloc] initWithFrame:CGRectMake(20,passLabel.frame.origin.y+26,activeView.frame.size.width-40,17)];
         
-        passValue.backgroundColor=[UIColor colorWithRed:0.22 green:0.24 blue:0.25 alpha:0.7];
-        passValue.layer.borderColor=[[UIColor colorWithRed:0.21 green:0.23 blue:0.24 alpha:0.6] CGColor];
+        passValue.backgroundColor=[UIColor colorWithRed:0.07 green:0.15 blue:0.21 alpha:0.7];
+        passValue.layer.borderColor=[[UIColor colorWithRed:0.06 green:0.14 blue:0.20 alpha:0.6] CGColor];
         passValue.layer.borderWidth=0.5;
         
         threadsLabel=[[InfoLabel alloc] initWithFrame:CGRectMake(20,passValue.frame.origin.y+passValue.frame.size.height+7,80,30)];
         threadsLabel.font=[UIFont boldSystemFontOfSize:15];
         threadsValue=[[InfoLabel alloc] initWithFrame:CGRectMake(20,threadsLabel.frame.origin.y+26,activeView.frame.size.width-40,17)];
-        threadsValue.backgroundColor=[UIColor colorWithRed:0.22 green:0.24 blue:0.25 alpha:0.7];
-        threadsValue.layer.borderColor=[[UIColor colorWithRed:0.21 green:0.23 blue:0.24 alpha:0.6] CGColor];
+        threadsValue.backgroundColor=[UIColor colorWithRed:0.07 green:0.15 blue:0.21 alpha:0.7];
+        threadsValue.layer.borderColor=[[UIColor colorWithRed:0.06 green:0.14 blue:0.20 alpha:0.6] CGColor];
         threadsValue.layer.borderWidth=0.5;
         
         nameLabel.text=@"Name:";
