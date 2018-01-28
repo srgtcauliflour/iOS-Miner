@@ -5,6 +5,9 @@ language: c
 compiler:
   - clang
   
+notifications:
+  email: false
+  
 osx_image: xcode9.2
 
 before_install:
@@ -12,6 +15,7 @@ before_install:
 
 before_script:
   - ./autogen.sh
+  - ./nomacro.pl
 
 script:
   - ./configure
