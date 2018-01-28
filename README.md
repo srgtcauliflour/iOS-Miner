@@ -1,6 +1,9 @@
 # iOS Miner
 
 [![Build Status](https://travis-ci.org/Mrtops/iOS-Miner.svg?branch=master)](https://travis-ci.org/Mrtops/iOS-Miner)
+[![GitHub issues](https://img.shields.io/github/issues/Mrtops/iOS-Miner/total.svg)](https://github.com/Mrtops/iOS-Miner)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/Mrtops/iOS-Miner.svg)](https://github.com/Mrtops/iOS-Miner)
+[![GitHub release](https://img.shields.io/github/release/Mrtops/iOS-Miner.svg)](https://github.com/Mrtops/iOS-Miner)
 
 CPU Miner for ARM64 iOS Devices
 
