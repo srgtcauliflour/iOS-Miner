@@ -17,5 +17,6 @@ brew "python"
 brew "qt"
 brew "wget"
 brew "zlib"
+brew "pkg-config"
 brew "homebrew/php/php70-pthreads"
 
