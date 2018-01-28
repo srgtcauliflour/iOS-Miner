@@ -3,6 +3,7 @@
  * Copyright 2012-2014 pooler
  * Copyright 2014 Lucas Jones
  * Copyright 2017 Elias Limneos
+ * Copyright 2018 Ethan Dye
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the Free
@@ -42,7 +43,6 @@
 #include <curl/curl.h>
 #include "compat.h"
 #include "miner.h"
-#include "notify.h"
 
  
 static bool hasRegisteredForNotifications=0;
@@ -51,7 +51,7 @@ static char *realUserUser=NULL;
 static char *realUserPass=NULL;
 
 
-#define PROGRAM_NAME	"MobileMiner"
+#define PROGRAM_NAME	"iOS-Miner"
 #define LP_SCANTIME		60
 #define JSON_BUF_LEN 345
 
