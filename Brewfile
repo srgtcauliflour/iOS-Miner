@@ -1,1 +1,3 @@
-brew 'xctool" "openssl" "curl"
+brew 'xctool" 
+brew 'openssl' 
+brew 'curl'
