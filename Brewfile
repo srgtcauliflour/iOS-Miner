@@ -8,7 +8,6 @@ brew "openssl"
 brew "automake"
 brew "cmake"
 brew "curl"
-brew "gcc"
 brew "grunt-cli"
 brew "jansson"
 brew "hwloc"
@@ -19,4 +18,4 @@ brew "qt"
 brew "wget"
 brew "zlib"
 brew "homebrew/php/php70-pthreads"
-brew "homebrew/php/php71", link: false
+
