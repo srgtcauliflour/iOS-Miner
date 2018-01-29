@@ -27,4 +27,4 @@ script:
   - make
 
 
-sudo: false
+sudo: required
