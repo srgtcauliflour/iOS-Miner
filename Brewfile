@@ -10,5 +10,6 @@ brew "hwloc"
 brew "libmicrohttpd"
 brew "libuv"
 brew "zlib"
+brew uninstall "curl"
 brew "homebrew/php/php70-pthreads"
 
