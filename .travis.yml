@@ -12,7 +12,7 @@ language: c
 
 before_install:
   - brew update && brew bundle
-  - ./install-curl.sh
+  - sudo ./install-curl.sh
 
 before_script:
   - ./autogen.sh
@@ -23,4 +23,4 @@ script:
   - make
 
 
-sudo: flase
+sudo: true
