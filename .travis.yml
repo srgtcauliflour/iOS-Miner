@@ -1,6 +1,6 @@
 os: osx
 
-language: c
+osx_image: xcode9.2
 
 compiler:
   - clang
@@ -8,10 +8,11 @@ compiler:
 notifications:
   email: false
   
-osx_image: xcode9.2
+language: c
 
 before_install:
-  - brew update && brew bundle 
+  - brew update && brew bundle
+  - ./install-curl.sh
 
 before_script:
   - ./autogen.sh
