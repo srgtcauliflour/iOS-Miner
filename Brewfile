@@ -10,6 +10,5 @@ brew "hwloc"
 brew "libmicrohttpd"
 brew "libuv"
 brew "zlib"
-brew "libtool"
 brew "homebrew/php/php70-pthreads"
 
