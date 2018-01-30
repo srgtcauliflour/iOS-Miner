@@ -18,7 +18,7 @@ before_script:
   - ./nomacro.pl
 
 script:
-  - ./configure
+  - ./configure --prefix=/usr/local/curl
   - make
 
 
