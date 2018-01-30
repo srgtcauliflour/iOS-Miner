@@ -8,7 +8,7 @@ compiler:
 notifications:
   email: false
   
-language: objc
+language: c
 
 before_install:
   - brew update && brew bundle
