@@ -12,13 +12,14 @@ language: c
 
 before_install:
   - brew update && brew bundle
+  - brew link --force curl
 
 before_script:
   - ./autogen.sh
   - ./nomacro.pl
 
 script:
-  - ./configure --prefix=/usr/local/curl
+  - ./configure
   - make
 
 
