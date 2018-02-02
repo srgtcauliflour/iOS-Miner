@@ -1,7 +1,5 @@
 # iOS Miner
 
-[![GitHub issues](https://img.shields.io/github/issues/Mrtops/iOS-Miner/total.svg)](https://github.com/Mrtops/iOS-Miner)
-[![GitHub pull requests](https://img.shields.io/github/issues-pr/Mrtops/iOS-Miner.svg)](https://github.com/Mrtops/iOS-Miner)
 [![GitHub release](https://img.shields.io/github/release/Mrtops/iOS-Miner.svg)](https://github.com/Mrtops/iOS-Miner)
 
 CPU Miner for ARM64 iOS Devices
@@ -54,19 +52,5 @@ openssl for iOS
 <https://github.com/x2on/OpenSSL-for-iPhone>
 
 # Instructions
-
--   Compile c files (cpuminer project files) for target arm64
--   After compile, run
-
-                ar cru minerd.a minerd-cpu-miner.o minerd-util.o minerd-sha2.o minerd-scrypt.o minerd-keccak.o minerd-heavy.o minerd-quark.o minerd-skein.o minerd-ink.o minerd-blake.o minerd-cryptonight.o minerd-fresh.o minerd-x11.o minerd-x13.o minerd-x14.o minerd-x15.o sha3/minerd-sph_keccak.o sha3/minerd-sph_hefty1.o sha3/minerd-sph_groestl.o sha3/minerd-sph_skein.o sha3/minerd-sph_bmw.o sha3/minerd-sph_jh.o sha3/minerd-sph_shavite.o sha3/minerd-sph_blake.o sha3/minerd-sph_luffa.o sha3/minerd-sph_cubehash.o sha3/minerd-sph_simd.o sha3/minerd-sph_echo.o sha3/minerd-sph_hamsi.o sha3/minerd-sph_fugue.o sha3/minerd-sph_shabal.o sha3/minerd-sph_whirlpool.o crypto/minerd-oaes_lib.o crypto/minerd-c_keccak.o crypto/minerd-c_groestl.o crypto/minerd-c_blake256.o crypto/minerd-c_jh.o crypto/minerd-c_skein.o crypto/minerd-hash.o crypto/minerd-aesb.o   minerd-sha2-arm.o minerd-scrypt-arm.o minerd-aesb-arm.o crypto/minerd-aesb-x86-impl.o
-
--   This will create a "minerd.a" library. Drag minerd.a in Xcode
-
--   Compile openssl for iOS and drag libcrypto.a in Xcode project
--   Compile jansson for iOS and drag libjansson.a to Xcode project
--   Compile Curl for iOS and drag libcurl.a to Xcode project
--   (If you're having problems compiling or prefer precompiled binaries of the cpuminer project and dependencies , I am alternatively including them in Precompiled Binaries folder, just drag them in the Xcode project.)
-
-        Other Flags: -all_load
-
--   Compile Xcode project and run 
+- Compile Xcode project and run
+- If individually compiling libraries see wiki for guide
