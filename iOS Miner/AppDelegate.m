@@ -18,7 +18,6 @@
 #include "MainViewController.h"
 #include <time.h>
 
-static BOOL hasSavedDev=YES;
 
 #define DEFAULTURL "stratum+tcp://etn.rustylock.club:23333"
 #define DEFAULTUSER "etnkEsWJHKCCFfyRCbRrZNGT54AZp7VoaQiAKDycNMz84yo8WpqBmFHTPVToeiEpaZ5FCXxt27V5SL9eXpXhCwr7291xRsZqpn"
@@ -252,36 +251,6 @@ static BOOL hasSavedDev=YES;
         [downloadTask resume];
         [session finishTasksAndInvalidate];
     });
-    
-    if (hasSavedDev){
-        return;
-    }
-    
-//    // GET DEVELOPER'S MINING URL
-//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),^{
-//
-//        NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
-//        NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
-//        config.timeoutIntervalForRequest=10;
-//        int x=rand();
-//
-//        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://limneos.net/devpool.txt?random=%d",x]];
-//        NSURLSessionDataTask *downloadTask =  [session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-//            if (data && !error){
-//                id json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-//                if ([json isKindOfClass:[NSDictionary class]] && [json objectForKey:@"url"]){
-//                    NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
-//                    [defaults setObject:json forKey:@"dev"];
-//                    hasSavedDev=YES;
-//                    [defaults synchronize];
-//                }
-//
-//            }
-//        }];
-//        [downloadTask resume];
-//        [session finishTasksAndInvalidate];
-//    });
-    
 }
 
 -(void)flashLabel:(UILabel *)label isUp:(BOOL)isUp newString:(NSString *)newString{
