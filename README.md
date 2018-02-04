@@ -8,10 +8,10 @@
 
 CPU Miner for ARM64 iOS Devices
 
-This is a fork of Lucas Jones's cpuminer-multi, (<https://github.com/lucasjones/cpuminer-multi>) compiled for arm64 iOS devices. Credits go to the initial developers and contributors. It was then forked from Limneos's MobileMiner (<https://github.com/limneos/MobileMiner>) and further improved upon.
+This is a fork of Lucas Jones's [cpuminer-multi](<https://github.com/lucasjones/cpuminer-multi>) compiled for arm64 iOS devices. Credits go to the initial developers and contributors. It was then forked from Limneos's [MobileMiner](<https://github.com/limneos/MobileMiner>) and further improved upon.
 
 # Releases
-For binaries check under the release tab (<https://github.com/Mrtops/iOS-Miner/releases>) To install on iOS devices please use Saurik's Cydia Impactor (<http://www.cydiaimpactor.com>)
+For binaries check under the release tab (<https://github.com/Mrtops/iOS-Miner/releases>) To install on iOS devices please use Saurik's [Cydia Impactor](<http://www.cydiaimpactor.com>)
 
 # Changes
 
@@ -46,17 +46,13 @@ if you want to keep the same argument formatting and parsing.
 
 # Dependencies
 
-cpuminer-multi
-<https://github.com/Mrtops/iOS-Miner/tree/master/cpuminer-multi>
+[cpuminer-multi](<https://github.com/Mrtops/iOS-Miner/tree/master/cpuminer-multi>)
 
-Jansson
-<https://github.com/akheron/jansson>
+[Jansson](<https://github.com/akheron/jansson>)
 
-curl for iOS
-<https://github.com/sinofool/build-libcurl-ios>
+[cURL for iOS](<https://github.com/sinofool/build-libcurl-ios>)
 
-openssl for iOS
-<https://github.com/x2on/OpenSSL-for-iPhone>
+[OpenSSL for iOS](<https://github.com/x2on/OpenSSL-for-iPhone>)
 
 # Instructions
 - Compile Xcode project and run
