@@ -61,21 +61,21 @@ openssl for iOS
 
 # Donations
 Donations for the work done on iOS are accepted at the following adresses:
-ETN:
-etnkEsWJHKCCFfyRCbRrZNGT54AZp7VoaQiAKDycNMz84yo8WpqBmFHTPVToeiEpaZ5FCXxt27V5SL9eXpXhCwr7291xRsZqpn
-XMR:
-45igU3eSMK9iTAzaZNoHpVEgn7WtoFVyA3JSgnkeFumSF6JujTBcQAdh5naLVR2g42LUWGx7UyQZMSfn5GAiLCcP1sSDUKc
-BCN:
-29kJ45WdPPhj9Zbp1GpurucwEQCcgchPn4fK64AH2J2PNcGW3TJehPy9MwxJJREbzJNq2CN4K6QoR9kPj7p2tYQJAojCVY1
-BTC:
-1FuzwKipgFDKdessCxh9DwPT6ZK4HpDYNz
-BCH:
-16ENjTDFSdd9ieuHVu6tviQJTuwbZ8Mz2v
-ETH:
-0x73376259239875d329fd928a200d6c05d6d521ee
-LTC:
-LUy496hoxcUGLiEwJfcVi9ZsB6sUTXuwsA
-PPC:
-PF6tQ9kiVC1VPvdmLvkuqoz8sNBymKGxFF
-DSH:
-Xw3DgfqbkfE2wxJhuEowEaQSte8y1FxjAc
+- ETN:
+      etnkEsWJHKCCFfyRCbRrZNGT54AZp7VoaQiAKDycNMz84yo8WpqBmFHTPVToeiEpaZ5FCXxt27V5SL9eXpXhCwr7291xRsZqpn
+- XMR:
+      45igU3eSMK9iTAzaZNoHpVEgn7WtoFVyA3JSgnkeFumSF6JujTBcQAdh5naLVR2g42LUWGx7UyQZMSfn5GAiLCcP1sSDUKc
+- BCN:
+      29kJ45WdPPhj9Zbp1GpurucwEQCcgchPn4fK64AH2J2PNcGW3TJehPy9MwxJJREbzJNq2CN4K6QoR9kPj7p2tYQJAojCVY1
+- BTC:
+      1FuzwKipgFDKdessCxh9DwPT6ZK4HpDYNz
+- BCH:
+      16ENjTDFSdd9ieuHVu6tviQJTuwbZ8Mz2v
+- ETH:
+      0x73376259239875d329fd928a200d6c05d6d521ee
+- LTC:
+      LUy496hoxcUGLiEwJfcVi9ZsB6sUTXuwsA
+- PPC:
+      PF6tQ9kiVC1VPvdmLvkuqoz8sNBymKGxFF
+- DSH:
+      Xw3DgfqbkfE2wxJhuEowEaQSte8y1FxjAc
