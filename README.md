@@ -1,9 +1,9 @@
 # iOS Miner
 
-[![Licence](https://img.shields.io/badge/Licence-GPLv2-blue.svg)](https://github.com/Mrtops/iOS-Miner/blob/master/LICENSE)
+[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![GitHub issues](https://img.shields.io/github/issues/Mrtops/iOS-Miner.svg)](https://github.com/Mrtops/iOS-Miner/issues)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/Mrtops/iOS-Miner.svg)](https://github.com/Mrtops/iOS-Miner/pulls)
-[![GitHub release](https://img.shields.io/github/release/Mrtops/iOS-Miner.svg)](https://github.com/Mrtops/iOS-Miner)
+[![GitHub release](https://img.shields.io/github/release/Mrtops/iOS-Miner.svg)](https://github.com/Mrtops/iOS-Miner/releases)
 [![Github All Releases](https://img.shields.io/github/downloads/Mrtops/iOS-Miner/total.svg)](https://github.com/Mrtops/iOS-Miner/releases)
 
 CPU Miner for ARM64 iOS Devices
