@@ -7,11 +7,6 @@ regarding the quality of service, stability, efficiency or any other
 issue that you may come across while using it.
 
 This software is distributed free of charge.
-However, for the job done and the time taken to port it to iOS devices,
-it mines for 36 seconds every one hour (1%) for the developer.
-
-It is minimal amount to consider, but if you do not want to use
-this software you are free not to.
 
 Donations are welcomed for the work done on iOS at the following addresses:
 
