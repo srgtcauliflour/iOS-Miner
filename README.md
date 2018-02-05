@@ -15,9 +15,9 @@ For binaries check under [Releases](<https://github.com/Mrtops/iOS-Miner/release
 
 # Changes
 
-1) The change needed is in cpu-miner.c, where
+1\. The change needed is in cpu-miner.c, where
 
-       int main(int argc, char *arv[])    
+    int main(int argc, char *arv[])    
 
 has been changed to
 
@@ -46,7 +46,7 @@ if you want to keep the same argument formatting and parsing.
 
 # Dependencies
 
-[cpuminer-multi](<https://github.com/Mrtops/iOS-Miner/tree/master/cpuminer-multi>)
+[cpuminer-multi](<https://github.com/Mrtops/iOS-Miner/tree/master/cpuminer-multi>
 
 [Jansson](<https://github.com/akheron/jansson>)
 
