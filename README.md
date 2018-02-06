@@ -46,7 +46,7 @@ if you want to keep the same argument formatting and parsing.
 
 # Dependencies
 
-[cpuminer-multi](<https://github.com/Mrtops/iOS-Miner/tree/master/cpuminer-multi>
+[cpuminer-multi](<https://github.com/Mrtops/iOS-Miner/tree/master/cpuminer-multi>)
 
 [Jansson](<https://github.com/akheron/jansson>)
 
