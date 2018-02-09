@@ -71,7 +71,7 @@
     NSString *licensePath=[[NSBundle mainBundle] pathForResource:@"Disclaimer" ofType:@"txt"];
     textView.text=[NSString stringWithContentsOfFile:licensePath encoding:NSUTF8StringEncoding error:NULL];
     [self.view addSubview:textView];
-    
+
 }
 @end
 
@@ -94,6 +94,7 @@
 }
 -(void)viewDidLoad{
     
+    [super viewDidLoad];
     self.view.backgroundColor=[UIColor colorWithRed:0.51 green:0.53 blue:0.52 alpha:1.0];
     UIBarButtonItem *right=[[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(dismissMe:)];
     self.navigationItem.rightBarButtonItem=right;

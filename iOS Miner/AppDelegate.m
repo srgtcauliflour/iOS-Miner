@@ -65,6 +65,9 @@
     [[UIApplication sharedApplication] setIdleTimerDisabled: YES];
     
     NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
+    
+    UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+    UNAuthorizationOptions options = UNAuthorizationOptionAlert + UNAuthorizationOptionSound + UNAuthorizationOptionBadge;
     // [defaults removePersistentDomainForName:[[NSBundle mainBundle] bundleIdentifier]];
     // ^ to test with clean settings ^
     
@@ -133,7 +136,12 @@
     [fakeRootController.view addSubview:statusView];
     
     [window makeKeyAndVisible];
-    [application registerUserNotificationSettings: [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
+    [center requestAuthorizationWithOptions:options
+                          completionHandler:^(BOOL granted, NSError * _Nullable error) {
+                              if (!granted) {
+                                  NSLog(@"Something went wrong");
+                              }
+                          }];
     
     UIApplication* app = [UIApplication sharedApplication];
     

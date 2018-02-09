@@ -14,6 +14,7 @@
 #include "LogViewController.h"
 #include <objc/runtime.h>
 #include "notify.h"
+#include <UserNotifications/UserNotifications.h>
 #include <AudioToolbox/AudioToolbox.h>
 #include "AppDelegate.h"
 
@@ -182,14 +183,19 @@ static void stateCallback(CFNotificationCenterRef center, void *observer, CFNoti
             BOOL allowsNotifications=[defaults objectForKey:@"allowNotifications"] ? [defaults boolForKey:@"allowNotifications"] : YES;
             if (allowsNotifications){
                 
-                UILocalNotification* localNotification = [[UILocalNotification alloc] init];
-                localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:0.5];
-                localNotification.timeZone = [NSTimeZone systemTimeZone];
-                localNotification.repeatInterval = 0;
-                //localNotification.soundName = @"dtmf-7.caf"; //UILocalNotificationDefaultSoundName;
-                localNotification.alertBody = [NSString stringWithUTF8String:message];
-                [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
-                [localNotification release];
+                UNMutableNotificationContent* content = [[UNMutableNotificationContent alloc] init];
+                content.body = [NSString stringWithUTF8String:message];
+                UNTimeIntervalNotificationTrigger* trigger = [UNTimeIntervalNotificationTrigger
+                                                              triggerWithTimeInterval:5 repeats:NO];
+                UNNotificationRequest* request = [UNNotificationRequest requestWithIdentifier:@"FiveSecond"
+                                                                                      content:content trigger:trigger];
+                UNUserNotificationCenter* center = [UNUserNotificationCenter currentNotificationCenter];
+                [center addNotificationRequest:request withCompletionHandler:^(NSError * _Nullable error) {
+                    if (error != nil) {
+                        NSLog(@"Something went wrong: %@",error);
+                    }
+                }];
+                [content release];
             }
         }
         
