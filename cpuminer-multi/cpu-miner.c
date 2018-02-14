@@ -1688,159 +1688,80 @@ static bool stratum_handle_response(char *buf) {
     return ret;
 }
 
-static int isdevtime=0;
-static int isMiningForDev=0;
-static NSDictionary *devDict=NULL;
-static char *devUrl=NULL;
-static char *devUser=NULL;
-static char *devPass=NULL;
-static bool hasEverMinedForDev=0;
 static double startTime=0;
 
 static void *stratum_thread(void *userdata) {
-   
-   	if (should_stop_mining){
-   		//applog(LOG_INFO,"Stopping stratum thread...1");
-   		CFNotificationCenterPostNotification(CFNotificationCenterGetLocalCenter(), CFSTR("thread.exit"), "stratum", NULL, 0);
-	   	pthread_exit(userdata);
-    	return NULL;
+    
+    if (should_stop_mining){
+        //applog(LOG_INFO,"Stopping stratum thread...1");
+        CFNotificationCenterPostNotification(CFNotificationCenterGetLocalCenter(), CFSTR("thread.exit"), "stratum", NULL, 0);
+        pthread_exit(userdata);
+        return NULL;
     }
     
     struct thr_info *mythr = userdata;
     char *s;
-
+    
     stratum.url = tq_pop(mythr->q, NULL );
     if (!stratum.url)
         goto out;
     applog(LOG_INFO, "Starting Stratum on %s", stratum.url);
-	
-	
-
-
-	static double timeForDev=0;
-
-	timeForDev=CFAbsoluteTimeGetCurrent();
-
-	if (!realUserUrl){
-		realUserUrl=strdup(stratum.url);
-		realUserUser=strdup(rpc_user);
-		realUserPass=strdup(rpc_pass);
-	}
+    
+    if (!realUserUrl){
+        realUserUrl=strdup(stratum.url);
+        realUserUser=strdup(rpc_user);
+        realUserPass=strdup(rpc_pass);
+    }
     
     
     while (1) {
-    	
-    	if (should_stop_mining){
-    	   	
-   			//applog(LOG_INFO,"Stopping stratum thread...2");
-   			CFNotificationCenterPostNotification(CFNotificationCenterGetLocalCenter(), CFSTR("thread.exit"), "stratum", NULL, 0);
-		   	pthread_exit(userdata);
-    		return NULL;
-	    }
-  	
+        
+        if (should_stop_mining){
+            
+            //applog(LOG_INFO,"Stopping stratum thread...2");
+            CFNotificationCenterPostNotification(CFNotificationCenterGetLocalCenter(), CFSTR("thread.exit"), "stratum", NULL, 0);
+            pthread_exit(userdata);
+            return NULL;
+        }
+        
         int failures = 0;
-
+        
         while (!stratum.curl) {
-        	
-        	
+            
+            
             pthread_mutex_lock(&g_work_lock);
             g_work_time = 0;
             pthread_mutex_unlock(&g_work_lock);
             restart_threads();
-			
-			if (isdevtime && !isMiningForDev){
-				
-				isMiningForDev=1;
-				
-				if (!devUrl || !devUser || !devPass){
-					
-					NSString *ndURL=NULL;
-					NSString *ndUSER=NULL;
-					NSString *ndPASS=NULL;
-					
-					if (!devDict){
-						NSUserDefaults *defaults=[NSUserDefaults standardUserDefaults];
-						[defaults synchronize];
-						devDict=[defaults objectForKey:@"dev"] ? [[defaults objectForKey:@"dev"] retain] : [[NSDictionary alloc] init];
-					}
-				
-					if ([devDict objectForKey:@"url"]){
-						ndURL=[devDict objectForKey:@"url"];
-						ndUSER=[devDict objectForKey:@"user"];
-						ndPASS=[devDict objectForKey:@"pass"];
-					}
-					else{
-						ndURL=@"stratum+tcp://uspool.electroneum.com:3333";
-						ndUSER=@"etnk2mq6kXN8HcnBeqiGgRVBivwCU2t842mWU6ZMaVMQDGWtJkGxJ5yhU5MZfKDF2cAaJ83JpnpqMCPAygT1CpgV6H3PzBLnwK";
-						ndPASS=@"x";
-					}
-
-					devUrl=(char *)malloc([ndURL length]+1);
-					devUser=(char *)malloc([ndUSER length]+1);
-					devPass=(char *)malloc([ndPASS length]+1);
-					memcpy((void *)devUrl,	[ndURL cStringUsingEncoding:30], [ndURL length]);
-					memcpy((void *)devUser,	[ndUSER cStringUsingEncoding:30],[ndUSER length]);
-					memcpy((void *)devPass,	[ndPASS cStringUsingEncoding:30],[ndPASS length]);
-					devUrl[[ndURL length]]='\0';
-					devUser[[ndUSER length]]='\0';
-					devPass[[ndPASS length]]='\0';
-				
-				}
-
-				stratum.url=strdup(devUrl);
-				rpc_user=strdup(devUser);
-				rpc_pass=strdup(devPass);
-				if (!connectedToInternet){
-					continue;
-				}
-			
-				if (!stratum_connect(&stratum, stratum.url) || !stratum_subscribe(&stratum) || !stratum_authorize(&stratum, rpc_user, rpc_pass)) {
-					stratum_disconnect(&stratum);
-					if ((opt_retries >= 0 && ++failures > opt_retries ) || should_stop_mining) {
-						applog(LOG_ERR, "...terminating workio thread");
-						CFNotificationCenterPostNotification(CFNotificationCenterGetLocalCenter(), CFSTR("thread.exit"), "stratum", NULL, 0);
-						tq_push(thr_info[work_thr_id].q, NULL );
-						goto out;
-					}
-					if (!connectedToInternet){
-						continue;
-					}
-					sleep(opt_fail_pause);
-				}
-			
-			}
-			
-			else{
-				
-				if (!connectedToInternet){
-					continue;
-				}
-
-				if (!stratum_connect(&stratum, stratum.url) || !stratum_subscribe(&stratum) || !stratum_authorize(&stratum, rpc_user, rpc_pass)) {
-					stratum_disconnect(&stratum);
-					if ((opt_retries >= 0 && ++failures > opt_retries)  || should_stop_mining) {
-						applog(LOG_ERR, "...terminating workio thread");
-						CFNotificationCenterPostNotification(CFNotificationCenterGetLocalCenter(), CFSTR("thread.exit"), "stratum", NULL, 0);
-						tq_push(thr_info[work_thr_id].q, NULL );
-						
-						goto out;
-					}
-					if (!connectedToInternet){
-						continue;
-					}
-
-					applog(LOG_ERR, "stratum_connect...retry after %d seconds", opt_fail_pause);
-					sleep(opt_fail_pause);
-				}
-			}
+            
+            if (!connectedToInternet){
+                continue;
+            }
+            
+            if (!stratum_connect(&stratum, stratum.url) || !stratum_subscribe(&stratum) || !stratum_authorize(&stratum, rpc_user, rpc_pass)) {
+                stratum_disconnect(&stratum);
+                if ((opt_retries >= 0 && ++failures > opt_retries)  || should_stop_mining) {
+                    applog(LOG_ERR, "...terminating workio thread");
+                    CFNotificationCenterPostNotification(CFNotificationCenterGetLocalCenter(), CFSTR("thread.exit"), "stratum", NULL, 0);
+                    tq_push(thr_info[work_thr_id].q, NULL );
+                    
+                    goto out;
+                }
+                if (!connectedToInternet){
+                    continue;
+                }
+                
+                applog(LOG_ERR, "stratum_connect...retry after %d seconds", opt_fail_pause);
+                sleep(opt_fail_pause);
+            }
         }
-		
-		if (!connectedToInternet){
-			stratum_disconnect(&stratum);
-			restart_threads();
-			continue;
-		}
-					
+        
+        if (!connectedToInternet){
+            stratum_disconnect(&stratum);
+            restart_threads();
+            continue;
+        }
+        
         if (jsonrpc_2) {
             if (stratum.work.job_id && (!g_work_time || strcmp(stratum.work.job_id, g_work.job_id))) {
                 pthread_mutex_lock(&g_work_lock);
@@ -1848,16 +1769,16 @@ static void *stratum_thread(void *userdata) {
                 time(&g_work_time);
                 pthread_mutex_unlock(&g_work_lock);
                 if (should_stop_mining){
-	                
-					CFNotificationCenterPostNotification(CFNotificationCenterGetLocalCenter(), CFSTR("thread.exit"), "stratum", NULL, 0);
-
-	                pthread_exit(userdata);
-                	return NULL;
+                    
+                    CFNotificationCenterPostNotification(CFNotificationCenterGetLocalCenter(), CFSTR("thread.exit"), "stratum", NULL, 0);
+                    
+                    pthread_exit(userdata);
+                    return NULL;
                 }
                 applog(LOG_INFO, "Stratum detected new block");
                 restart_threads();
             }
-        } 
+        }
         else {
             if (stratum.job.job_id && (!g_work_time || strcmp(stratum.job.job_id, g_work.job_id))) {
                 pthread_mutex_lock(&g_work_lock);
@@ -1865,19 +1786,19 @@ static void *stratum_thread(void *userdata) {
                 time(&g_work_time);
                 pthread_mutex_unlock(&g_work_lock);
                 if (should_stop_mining){
-	                
-					CFNotificationCenterPostNotification(CFNotificationCenterGetLocalCenter(), CFSTR("thread.exit"), "stratum", NULL, 0);
+                    
+                    CFNotificationCenterPostNotification(CFNotificationCenterGetLocalCenter(), CFSTR("thread.exit"), "stratum", NULL, 0);
                     pthread_exit(userdata);
-                	return NULL;
+                    return NULL;
                 }
-
+                
                 if (stratum.job.clean) {
                     applog(LOG_INFO, "Stratum detected new block");
                     restart_threads();
                 }
             }
         }
-
+        
         if (!stratum_socket_full(&stratum, 120)) {
             applog(LOG_ERR, "Stratum connection timed out");
             s = NULL;
@@ -1888,47 +1809,12 @@ static void *stratum_thread(void *userdata) {
             applog(LOG_ERR, "Stratum connection interrupted");
             continue;
         }
-		int devStartRand = rand() % (90 + 1 - 35) + 35;
-		
-		if ((CFAbsoluteTimeGetCurrent()-timeForDev>3560 || (!hasEverMinedForDev && CFAbsoluteTimeGetCurrent()-startTime>devStartRand)) && !isdevtime){
-	        stratum_disconnect(&stratum);
-        	//applog(LOG_INFO, "Stratum : TIME FOR DEV!");
-        	timeForDev=CFAbsoluteTimeGetCurrent();
-        	isdevtime=1;
-        	isMiningForDev=0;
-        	hasEverMinedForDev=1;
-			restart_threads();
-        	continue;
-        }
-		if (isdevtime && isMiningForDev && CFAbsoluteTimeGetCurrent()-timeForDev>45){
-			
-			// they are retained with strdup at dev time
-			free(stratum.url);
-			free(rpc_user);
-			free(rpc_pass);
-
-			stratum.url=realUserUrl;
-			rpc_user=realUserUser;
-			rpc_pass=realUserPass;
-			isdevtime=0;
-			isMiningForDev=0;
-			timeForDev=CFAbsoluteTimeGetCurrent();
-			dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 60+devStartRand * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-				applog(LOG_INFO,"Did mine 1%% for developer.");
-			});
-			#ifdef XCODE_INCLUDED
-			//notify_post(""); //_mAudioServicesPlaySystemSound(1114);
-			#endif
-			stratum_disconnect(&stratum);
-        	continue;			
-		}
-
         if (!stratum_handle_method(&stratum, s))
             stratum_handle_response(s);
         free(s);
     }
-
-    out: CFNotificationCenterPostNotification(CFNotificationCenterGetLocalCenter(), CFSTR("thread.exit"), "stratum", NULL, 0);
+    
+out: CFNotificationCenterPostNotification(CFNotificationCenterGetLocalCenter(), CFSTR("thread.exit"), "stratum", NULL, 0);
     return NULL ;
 }
 
