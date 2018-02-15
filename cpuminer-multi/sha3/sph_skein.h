@@ -12,7 +12,7 @@
  * ==========================(LICENSE BEGIN)============================
  *
  * Copyright (c) 2007-2010  Projet RNRT SAPHIR
- * 
+ *
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
@@ -20,10 +20,10 @@
  * distribute, sublicense, and/or sell copies of the Software, and to
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
- * 
+ *
  * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
- * 
+ *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
@@ -42,33 +42,33 @@
 #define SPH_SKEIN_H__
 
 #ifdef __cplusplus
-extern "C"{
+extern "C" {
 #endif
 
-#include <stddef.h>
 #include "sph_types.h"
+#include <stddef.h>
 
 #if SPH_64
 
 /**
  * Output size (in bits) for Skein-224.
  */
-#define SPH_SIZE_skein224   224
+#define SPH_SIZE_skein224 224
 
 /**
  * Output size (in bits) for Skein-256.
  */
-#define SPH_SIZE_skein256   256
+#define SPH_SIZE_skein256 256
 
 /**
  * Output size (in bits) for Skein-384.
  */
-#define SPH_SIZE_skein384   384
+#define SPH_SIZE_skein384 384
 
 /**
  * Output size (in bits) for Skein-512.
  */
-#define SPH_SIZE_skein512   512
+#define SPH_SIZE_skein512 512
 
 /**
  * This structure is a context for Skein computations (with a 384- or
@@ -82,10 +82,10 @@ extern "C"{
  */
 typedef struct {
 #ifndef DOXYGEN_IGNORE
-	unsigned char buf[64];    /* first field, for alignment */
-	size_t ptr;
-	sph_u64 h0, h1, h2, h3, h4, h5, h6, h7;
-	sph_u64 bcount;
+  unsigned char buf[64]; /* first field, for alignment */
+  size_t ptr;
+  sph_u64 h0, h1, h2, h3, h4, h5, h6, h7;
+  sph_u64 bcount;
 #endif
 } sph_skein_big_context;
 
@@ -151,8 +151,8 @@ void sph_skein224_close(void *cc, void *dst);
  * @param n     the number of extra bits (0 to 7)
  * @param dst   the destination buffer
  */
-void sph_skein224_addbits_and_close(
-	void *cc, unsigned ub, unsigned n, void *dst);
+void sph_skein224_addbits_and_close(void *cc, unsigned ub, unsigned n,
+                                    void *dst);
 
 /**
  * Initialize a Skein-256 context. This process performs no memory allocation.
@@ -196,8 +196,8 @@ void sph_skein256_close(void *cc, void *dst);
  * @param n     the number of extra bits (0 to 7)
  * @param dst   the destination buffer
  */
-void sph_skein256_addbits_and_close(
-	void *cc, unsigned ub, unsigned n, void *dst);
+void sph_skein256_addbits_and_close(void *cc, unsigned ub, unsigned n,
+                                    void *dst);
 
 /**
  * Initialize a Skein-384 context. This process performs no memory allocation.
@@ -241,8 +241,8 @@ void sph_skein384_close(void *cc, void *dst);
  * @param n     the number of extra bits (0 to 7)
  * @param dst   the destination buffer
  */
-void sph_skein384_addbits_and_close(
-	void *cc, unsigned ub, unsigned n, void *dst);
+void sph_skein384_addbits_and_close(void *cc, unsigned ub, unsigned n,
+                                    void *dst);
 
 /**
  * Initialize a Skein-512 context. This process performs no memory allocation.
@@ -286,8 +286,8 @@ void sph_skein512_close(void *cc, void *dst);
  * @param n     the number of extra bits (0 to 7)
  * @param dst   the destination buffer
  */
-void sph_skein512_addbits_and_close(
-	void *cc, unsigned ub, unsigned n, void *dst);
+void sph_skein512_addbits_and_close(void *cc, unsigned ub, unsigned n,
+                                    void *dst);
 
 #endif
 

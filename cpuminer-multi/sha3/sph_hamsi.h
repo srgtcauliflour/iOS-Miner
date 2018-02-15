@@ -35,32 +35,32 @@
 #ifndef SPH_HAMSI_H__
 #define SPH_HAMSI_H__
 
-#include <stddef.h>
 #include "sph_types.h"
+#include <stddef.h>
 
 #ifdef __cplusplus
-extern "C"{
+extern "C" {
 #endif
 
 /**
  * Output size (in bits) for Hamsi-224.
  */
-#define SPH_SIZE_hamsi224   224
+#define SPH_SIZE_hamsi224 224
 
 /**
  * Output size (in bits) for Hamsi-256.
  */
-#define SPH_SIZE_hamsi256   256
+#define SPH_SIZE_hamsi256 256
 
 /**
  * Output size (in bits) for Hamsi-384.
  */
-#define SPH_SIZE_hamsi384   384
+#define SPH_SIZE_hamsi384 384
 
 /**
  * Output size (in bits) for Hamsi-512.
  */
-#define SPH_SIZE_hamsi512   512
+#define SPH_SIZE_hamsi512 512
 
 /**
  * This structure is a context for Hamsi-224 and Hamsi-256 computations:
@@ -74,13 +74,13 @@ extern "C"{
  */
 typedef struct {
 #ifndef DOXYGEN_IGNORE
-	unsigned char partial[4];
-	size_t partial_len;
-	sph_u32 h[8];
+  unsigned char partial[4];
+  size_t partial_len;
+  sph_u32 h[8];
 #if SPH_64
-	sph_u64 count;
+  sph_u64 count;
 #else
-	sph_u32 count_high, count_low;
+  sph_u32 count_high, count_low;
 #endif
 #endif
 } sph_hamsi_small_context;
@@ -109,13 +109,13 @@ typedef sph_hamsi_small_context sph_hamsi256_context;
  */
 typedef struct {
 #ifndef DOXYGEN_IGNORE
-	unsigned char partial[8];
-	size_t partial_len;
-	sph_u32 h[16];
+  unsigned char partial[8];
+  size_t partial_len;
+  sph_u32 h[16];
 #if SPH_64
-	sph_u64 count;
+  sph_u64 count;
 #else
-	sph_u32 count_high, count_low;
+  sph_u32 count_high, count_low;
 #endif
 #endif
 } sph_hamsi_big_context;
@@ -174,8 +174,8 @@ void sph_hamsi224_close(void *cc, void *dst);
  * @param n     the number of extra bits (0 to 7)
  * @param dst   the destination buffer
  */
-void sph_hamsi224_addbits_and_close(
-	void *cc, unsigned ub, unsigned n, void *dst);
+void sph_hamsi224_addbits_and_close(void *cc, unsigned ub, unsigned n,
+                                    void *dst);
 
 /**
  * Initialize a Hamsi-256 context. This process performs no memory allocation.
@@ -219,8 +219,8 @@ void sph_hamsi256_close(void *cc, void *dst);
  * @param n     the number of extra bits (0 to 7)
  * @param dst   the destination buffer
  */
-void sph_hamsi256_addbits_and_close(
-	void *cc, unsigned ub, unsigned n, void *dst);
+void sph_hamsi256_addbits_and_close(void *cc, unsigned ub, unsigned n,
+                                    void *dst);
 
 /**
  * Initialize a Hamsi-384 context. This process performs no memory allocation.
@@ -264,8 +264,8 @@ void sph_hamsi384_close(void *cc, void *dst);
  * @param n     the number of extra bits (0 to 7)
  * @param dst   the destination buffer
  */
-void sph_hamsi384_addbits_and_close(
-	void *cc, unsigned ub, unsigned n, void *dst);
+void sph_hamsi384_addbits_and_close(void *cc, unsigned ub, unsigned n,
+                                    void *dst);
 
 /**
  * Initialize a Hamsi-512 context. This process performs no memory allocation.
@@ -309,10 +309,8 @@ void sph_hamsi512_close(void *cc, void *dst);
  * @param n     the number of extra bits (0 to 7)
  * @param dst   the destination buffer
  */
-void sph_hamsi512_addbits_and_close(
-	void *cc, unsigned ub, unsigned n, void *dst);
-
-
+void sph_hamsi512_addbits_and_close(void *cc, unsigned ub, unsigned n,
+                                    void *dst);
 
 #ifdef __cplusplus
 }
