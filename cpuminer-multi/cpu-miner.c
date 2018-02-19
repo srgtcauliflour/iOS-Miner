@@ -2277,8 +2277,6 @@ int main(int argc, char *argv[]) {
   }
 #endif
 
-  isdevtime = 0;
-  isMiningForDev = 0;
 
   size_t size;
   sysctlbyname("hw.model", NULL, &size, NULL, 0);

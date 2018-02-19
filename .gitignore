@@ -28,3 +28,4 @@ mingw32-config.cache
 */.dirstamp
 
 *.iml
+*.orig
